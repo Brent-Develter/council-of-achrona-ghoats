@@ -1,6 +1,6 @@
 {
-  "run_id": "2026-11-24T14:09:47+01:00_4fd4dc6e",
-  "samenvatting": "De Raadsleden zijn het eens over een tijdpatroon: de zwaarste reacties in het logboek van de Beast Master en de visioenen van de Oracle vallen op dagen 10 + 4k (10, 14, 18, 22, 26, 30, 34, 38, 42). Dag 33 past niet in dit ritme. Een oorzaak is niet bewezen. De kabels bij de oude eik en de conjunctie van de Wachtsterren zijn beide hypothesen die tijdsamenloop niet kan bevestigen. Het debat eindigt daarom zonder vastgestelde ingreep of mechanisme.",
+  "run_id": "2026-11-24T14:56:01+01:00_c6ca58b0",
+  "samenvatting": "Het debat levert geen bewezen oorzaak van de Desync op. Geen van de Raadsleden vond de Desync zelf in zijn Kennisbron. De hypothese dat de hulpslag van ENG-011 (een eigen pols voor het datanet, dag 10) de Desync veroorzaakt, is niet getoetst. De Oracle heeft haar conjunctie-verklaring ingetrokken. De enige waarneming die meerdere bronnen onafhankelijk noemen is een nachtelijk ritme van onrust en visioenen rond 04:15 tot 04:50, op elke vierde dag van dag 10 tot en met dag 42. De tijdstempels in het archief zijn voor precies die nachten aantoonbaar onbetrouwbaar, en de klok van de Beast Master en de Oracle is niet vergeleken met de Kroonklok. Daarom is het ritme een aanwijzing en geen bewijs. Daarnaast heeft de Archmage ARC-106 pas laat gemeld: een toestemming voor een net op eigen maat in de benedenstad, die niet in het register stond. Of dat dezelfde ingreep is als de hulpslag, blijft open.",
   "oorzaak": {
     "ingreep": {
       "bewering": null,
@@ -13,66 +13,82 @@
       "zekerheid": 0.0
     },
     "verloop": {
-      "bewering": "De Desync toont een vierdaagse cyclus (dag 10 + 4k) in de zware nachten, zowel in de waarnemingen van de Beast Master (onrust 4 of 5 op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42) als in de visioenen van de Oracle (zware nachten op dezelfde dagen, elke keer wakker rond 04:15 tot 04:45). De eerste onrust bij de Beast Master was op dag 3 (kraai, nadat de mannen van de toren om 08:30 aankwamen) en op dag 9 (uil). Op dag 33 was de nacht rustig (BEA-071, ORA-133). De zware nacht die de Oracle voorspelde voor dag 33 kwam op dag 34 (ORA-134). De volgorde 'wolven eerst' is door de Beast Master teruggenomen: die geldt niet bij alle nachten.",
+      "bewering": "Op dag 10, 14, 18, 22, 26, 30, 34, 38 en 42 is er tussen 04:15 en 04:50 onrust bij dieren waargenomen, en in dezelfde nachten visioenen van lege steden, scherven en half aangekomen stemmen. Alle andere nachten die de Beast Master noemt zijn rustig of licht onrustig. Dit is het enige patroon dat in het debat door meerdere bronnen wordt genoemd. De nachten van ENG-107 en HIS-036 (dag 10, 04:50, benedenstad) en van ENG-026, HIS-053 en GUA-043 (dag 22, 04:15, poort oost) vallen binnen dit venster. Die overlap is niet bevestigd: de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 zijn onbetrouwbaar, en de klokken van de waarnemers zijn niet vergeleken. Verder is een bewuste hulpslag op dag 10 (ENG-011) gelogd, maar de Engineer kan niet vaststellen of die op dag 22 nog actief was.",
       "bewijs": [
         "BEA-019",
         "BEA-020",
-        "BEA-028",
-        "BEA-037",
-        "BEA-082",
-        "BEA-091",
+        "BEA-046",
+        "BEA-047",
+        "BEA-113",
         "ORA-110",
-        "ORA-142"
+        "ORA-114",
+        "ORA-130",
+        "HIS-036",
+        "HIS-053",
+        "ENG-011"
       ],
-      "zekerheid": 0.6
+      "zekerheid": 0.4
     }
   },
   "acties": [
     {
-      "actie": "Verzamel de werkdata van de mannen van de toren bij de kabels en de oude eik, vanaf dag 3, per dag.",
-      "reden": "De Beast Master kan de kabels niet als oorzaak aanwijzen omdat er na dag 3 geen werkdata in het logboek staat (BEA-109 noemt geen datum). Zonder die data is het niet te toetsen of de zware nachten op werkdagen vielen."
+      "actie": "De Historian controleert en corrigeert de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054, en bepaalt welke klok de juiste tijd in het register heeft vastgelegd.",
+      "reden": "Vier records rond de incidenten hebben een vastgelegd-tijdstip dat vóór of ver na het gebeurde ligt. Daardoor is het 04:00 tot 05:00-patroon in het archief niet te gebruiken als bewijs, en dat geldt ook voor de timing van de Engineer."
     },
     {
-      "actie": "Leg de werkdata naast de cyclusdagen 10 + 4k en naast de rustige dagen, zoals dag 33.",
-      "reden": "Alleen zo kan worden vastgesteld of de kabels het ritme verklaren of dat het ritme onafhankelijk van het werk bestaat."
+      "actie": "De Engineer controleert welke pols het datanet op dag 22 rond 04:15 volgde, en of de hulpslag van ENG-011 in die nacht nog actief was.",
+      "reden": "ENG-011 zegt dat de hulpslag 'los van de Kroonklok' loopt, maar er is geen meting van de pols in de nacht van dag 22. Zonder die meting blijft de hypothese van een timingverschil ongetoetst."
     },
     {
-      "actie": "Geef de Oracle toegang tot de BEA-records van de Beast Master, of laat de Beast Master de ORA-records vergelijken, zodat de dagen per record naast elkaar kunnen.",
-      "reden": "Beide Raadsleden konden elkaars records niet controleren. Zonder vergelijking per dag blijft het ritme een overeenkomst tussen twee losse bronnen."
+      "actie": "De raad vraagt de datatoren wat zij hebben gevraagd in het verzoek waarop ARC-106 een antwoord was, en wanneer het net op eigen maat is gestart, teruggedraaid of uitgeschakeld.",
+      "reden": "De Archmage kan niet bevestigen of ARC-106 dezelfde ingreep is als de hulpslag. Alleen de datatoren hebben het verzoek en de instelling in hun eigen papieren."
     },
     {
-      "actie": "Zet de conjunctie van de Wachtsterren niet meer als verklaring voor dag 33 in het dagboek, maar registreer de datum van de conjunctie en de nachtelijke waarnemingen zonder achteraf te verklaren.",
-      "reden": "De Oracle erkende dat de voorspelling voor dag 33 niet klopte en dat de verklaring 'nawerkt' een verklaring achteraf was. Dat maakt de hypothese niet toetsbaar."
+      "actie": "De Historian voegt ARC-106 toe aan het register, met de notitie dat de brief later is gevonden en dat de Archmage de toevoeging heeft goedgekeurd.",
+      "reden": "De Archmage heeft in het debat zijn instemming gegeven, en het register bevat de toestemming voor het net op eigen maat niet. Dat moet worden rechtgezet."
     },
     {
-      "actie": "Noteer bij elke nachtelijke waarneming welke dieren eerst aanslaan, en leg de volgorde vast per nacht.",
-      "reden": "De Beast Master heeft haar eerdere bewering over de volgorde moeten corrigeren. Een vaste registratie voorkomt dat dezelfde fout opnieuw optreedt."
+      "actie": "De raad stelt een tijdreferentie vast die buiten het archief staat, zoals een wachtrooster van de Guardian Keeper of een vaste klok in de burcht, en vergelijkt daarmee de tijden van de Beast Master, de Oracle en de Guardian Keeper.",
+      "reden": "De Beast Master en de Oracle hebben hun eigen klok niet gekoppeld aan de Kroonklok, en de Historian kan geen klokbron voor dag 22 vinden. Zonder gemeenschappelijke tijd kunnen de waarnemingen niet worden vergeleken."
+    },
+    {
+      "actie": "De Guardian Keeper verklaart de tegenstrijdigheid tussen GUA-106 (geen rondes tussen 03:00 en 06:00) en GUA-044 (zegelcontrole om 04:30).",
+      "reden": "Beide records zijn van de bewaking zelf en spreken elkaar tegen in het venster waar het ritme valt. Zonder verklaring is de betrouwbaarheid van de bewaking als tijdbron niet vast te stellen."
+    },
+    {
+      "actie": "De raad legt bij dag 46 een meting vast van de pols van het datanet en de staat van de hulpslag, tussen 04:00 en 05:00, met een klok die buiten het archief staat.",
+      "reden": "Dag 46 is de voorspelde nacht volgens de Beast Master, en de Oracle vraagt om dezelfde controle. Alleen een meting op die nacht kan de voorspelling en de hypothese van een afwijkende pols toetsen."
     }
   ],
   "risicos": [
     {
-      "risico": "De kabels of de conjunctie worden als oorzaak aangewezen op basis van tijdsamenloop, terwijl die samenloop geen oorzaak bewijst.",
-      "mitigatie": "Toets de hypothesen alleen met data per dag en houd de kabels en de conjunctie als open vraag tot er bewijs is."
+      "risico": "Het ritme van 04:15 tot 04:50 wordt als oorzaak aangenomen terwijl de tijdstempels en klokken onbetrouwbaar zijn. Daardoor kan de raad een verband zien dat er niet is, of juist een echt verband missen.",
+      "mitigatie": "Voordat het ritme als feit in het verdict wordt gebruikt, moet de klokvergelijking uit de acties zijn uitgevoerd, en moeten de tijden van HIS-035, HIS-036, HIS-053 en HIS-054 zijn gecorrigeerd."
     },
     {
-      "risico": "Visioenen van de Oracle worden als waarnemingen van de Desync behandeld, terwijl ze geen dieren of mensen tonen.",
-      "mitigatie": "Houd visioenen en fysieke waarnemingen in aparte categorieën in de verslaglegging."
+      "risico": "Het uitschakelen of terugdraaien van de hulpslag kan records die op de tweede pols staan verloren doen gaan, zoals HIS-110 beschrijft.",
+      "mitigatie": "Maak voor elke wijziging in de pols eerst een back-up van de records op de tweede pols, en voer de wijziging gecontroleerd uit met de Engineer aanwezig."
     },
     {
-      "risico": "Het ritme van vier dagen wordt te sterk gewogen en de uitzondering op dag 33 wordt genegeerd.",
-      "mitigatie": "Registreer alle dagen, ook de rustige, en vergelijk de afwijkingen expliciet met het ritme."
+      "risico": "Er is een net op eigen maat in de benedenstad ingesteld zonder raadsbesluit en buiten het register om. Daardoor kan er een ingreep in het datanet zijn die niemand in de raad kent.",
+      "mitigatie": "ARC-106 wordt volledig aan de raad gemeld en in het register opgenomen. Voortaan gaan instellingen van het datanet alleen met een raadsbesluit en een registervermelding."
     },
     {
-      "risico": "Herstelmaatregelen gericht op de kabels worden genomen zonder dat de oorzaak bewezen is, met mogelijk onnodige schade of kosten.",
-      "mitigatie": "Wacht met ingrijpen aan de kabels tot de werkdata naast de zware nachten is gelegd."
+      "risico": "De bewaking laat verkeer dat buiten de tik van de Kroonklok valt zonder toets door. Dat kan verkeer van buiten doorlaten, of legitiem verkeer onterecht als binnenverkeer behandelen.",
+      "mitigatie": "De Guardian Keeper onderzoekt of GUA-104 verkeer van buitenaf kan doorlaten, en de Engineer meet of het hulpslag-verkeer buiten de tikken valt. Tot die tijd wordt de opening van poort oost als onbewezen behandeld, niet als afgehandeld."
+    },
+    {
+      "risico": "De raad schrijft de Desync toe aan een astronomische of cyclische oorzaak, terwijl er geen meting van de hemelstand is, en die verklaring is inmiddels door de Oracle ingetrokken.",
+      "mitigatie": "De conjunctie blijft als hypothese uit het verdict. Er wordt alleen een oorzaak aangewezen die met een meting is getoetst."
     }
   ],
   "voorspelling": {
     "dag": 46,
-    "bewering": "Als het vierdaagse ritme standhoudt, zal de Desync op dag 46 opnieuw een zware nacht veroorzaken, rond 04:15 tot 04:50, met onrust bij wolven en herten in het diepe woud en stemmen en stil water in de visioenen van de Oracle. Dit is een extrapolatie van het patroon en geen bewezen oorzaak.",
+    "bewering": "Als het ritme doorloopt, treedt er op dag 46 tussen 04:15 en 04:50 opnieuw onrust op bij wolven en herten in het diepe woud of op de heuvel, en vertonen de visioenen van de Oracle in dezelfde nacht het bekende patroon. Dit is een voorspelling die met een klok buiten het archief kan worden getoetst. Als de nacht rustig blijft, is het ritme niet bevestigd.",
     "bewijs": [
-      "ORA-142",
-      "BEA-091"
+      "BEA-113",
+      "BEA-091",
+      "ORA-142"
     ]
   }
 }
