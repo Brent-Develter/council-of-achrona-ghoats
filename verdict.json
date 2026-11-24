@@ -1,11 +1,15 @@
 {
-  "run_id": "2026-11-24T15:18:58+01:00_332044df",
-  "samenvatting": "De Raad heeft geen Kennisbron geraadpleegd, en niemand heeft ruwe netlogs, offsets, replicatiefouten, schildlogs of gedeelde tijdstempels ingezien. Het enige concrete signaal is een periodieke nachtelijke verstoring die in de dierlogs (Beast Master) en het Oracle-dagboek wordt beschreven: rond 04:15 tot 04:50 uur, elke vier dagen (dag 10, 14, 18 t/m 42), met uitzondering van dag 33. Beide bronnen gebruiken eigen klokken en zijn niet door anderen gecontroleerd, dus dit is een aanwijzing en geen vastgestelde feit. De oorzaak is niet bewezen. De kabelhypothese (BEA-109), de conjunctie van de Wachtsterren (ORA-121, ORA-134), een leylijnverstoring (Archmage) en een zwakker schild (Guardian Keeper) blijven hypothesen. Engineer en Historian hebben geen bewijs geleverd, maar hebben wel de juiste toetsvoorwaarden benoemd.",
+  "run_id": "2026-11-24T15:40:47+01:00_3a3e41ea",
+  "samenvatting": "De Desync is in geen van de Kennisbronnen gedefinieerd of gemeten, dus de Raad kan niet vaststellen wat ze precies is. Wel zijn er concrete waarnemingen die in tijd samenvallen: een gemeten doorvoerstijging na de hulpslagactivatie op dag 10 (ENG-011, ENG-012), half aangekomen berichten op dag 10 (ENG-107, HIS-036), schildopeningen van binnenuit op dag 10 en dag 22 (GUA-019, GUA-043), een lek of pakketverlies bij poort oost op dag 22 (ENG-026, HIS-053), twee dalingen van de leylijnsterkte op dag 14 en dag 42 (ARC-015, ARC-071), en een terugkerend patroon van nachtelijke dierenonrust en zware nachten op dagen 10 tot en met 42 (BEA-019, BEA-028, BEA-091, ORA-110, ORA-142). Geen van de Raadsleden heeft een tijdsverband tussen deze waarnemingen bewezen. Het vierdaagse ritme is gebaseerd op een kleine steekproef en is niet met meetgegevens van alle dagen getoetst. De hypothesen over het datanet, de firewall, de Stille Winter en de conjunctie zijn niet onderbouwd. De Archmage heeft het datanet-verzoek van dag 8 (ARC-106) niet aan de Raad gemeld, en dat moet alsnog gebeuren.",
   "oorzaak": {
     "ingreep": {
-      "bewering": null,
-      "bewijs": [],
-      "zekerheid": 0.0
+      "bewering": "Activatie van de hulpslag (kristalresonator en polsversterker) op dag 10 om 02:40, gevolgd door een gemeten doorvoerstijging van 38% om 03:00. Of deze activatie de Desync veroorzaakt, is niet vastgesteld.",
+      "bewijs": [
+        "ENG-011",
+        "ENG-012",
+        "ENG-106"
+      ],
+      "zekerheid": 0.4
     },
     "mechanisme": {
       "bewering": null,
@@ -13,68 +17,104 @@
       "zekerheid": 0.0
     },
     "verloop": {
-      "bewering": "Volgens de dier- en Oracle-dagboeken treden er vanaf dag 10 nachtelijke uitschieters op rond 04:15 tot 04:50 uur, op dag 10, 14, 18, 22, 26, 30, 34, 38 en 42. Bij de dieren reageren de wolven eerst en vluchten de herten ongeveer 5 tot 10 minuten later. Dag 33 past niet in dit patroon. Dit is niet tegen netlogs gecontroleerd, en de klokken van de bronnen zijn onbekend.",
+      "bewering": "Dag 10: om 04:40 tot 04:50 nachtelijke onrust bij wolven en herten (BEA-019, BEA-020), om 04:47 een schildopening van binnenuit van twee minuten bij de benedenstad (GUA-019), en om 04:50 klachten over half aangekomen berichten (ENG-107, HIS-036). Dag 14: onrust vanaf 04:20 (BEA-028, BEA-029), leylijnsterkte laag (ARC-015 t/m ARC-028 is alleen als dagreeks vastgelegd, zie ARC-015) en zware nacht volgens het dagboek (ORA-114). Dag 22: om 04:15 drie minuten pakketverlies of lek bij poort oost (ENG-026, HIS-053) en een schildopening van binnenuit (GUA-043), met onrust in het diepe woud (BEA-046, BEA-047) en een zware nacht (ORA-122). Dag 42: onrust vanaf 04:30 (BEA-091, BEA-092), leylijnsterkte laag (ARC-071) en zware nacht (ORA-142). Het ritme van nachtelijke onrust op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42 staat in de logs van de Beast Master (BEA-019, BEA-028, BEA-037, BEA-046, BEA-055, BEA-064, BEA-073, BEA-082, BEA-091), maar is voor de meeste van die dagen niet met leylijnmetingen of netlogs gekoppeld. Dat deze tijdstippen samenvallen is een aanwijzing, geen bewijs van oorzaak.",
       "bewijs": [
         "ORA-110",
-        "ORA-114",
-        "ORA-130",
         "BEA-019",
         "BEA-020",
-        "BEA-113"
+        "GUA-019",
+        "ENG-107",
+        "HIS-036",
+        "BEA-028",
+        "ARC-015",
+        "ORA-114",
+        "ENG-026",
+        "HIS-053",
+        "GUA-043",
+        "BEA-046",
+        "ORA-122",
+        "BEA-091",
+        "ARC-071",
+        "ORA-142"
       ],
       "zekerheid": 0.4
     }
   },
   "acties": [
     {
-      "actie": "Vaststellen van een gedeelde klokbron of een omrekening tussen de klokken van de torens, de dierlogs, het Oracle-dagboek en het schildnet.",
-      "reden": "Zonder gedeelde tijdstempels kan geen volgorde of koppeling tussen de nachtelijke verstoring en een netgebeurtenis worden vastgesteld; alle bronnen gebruiken nu eigen klokken."
+      "actie": "Laat de Engineer, of een andere Raadslid met toegang tot de bron, de definitie en meetmethode van de Desync vastleggen in een gemeenschappelijk formaat.",
+      "reden": "Het woord 'Desync' staat in geen enkele Kennisbron, en zonder definitie kan niemand vaststellen of de waarnemingen hetzelfde verschijnsel betreffen."
     },
     {
-      "actie": "Leveren van de ruwe Engineer-logs (synchronisatie-offsets, heartbeat- en latentiedata, replicatiefouten en configuratiewijzigingen) voor de nachten van dag 10, 14, 18, 22, 26, 30, 34, 38 en 42, rond 04:15 tot 04:50 uur.",
-      "reden": "Alleen met ruwe netdata kan worden getoetst of de periodieke verstoring ook in het datanet zichtbaar is."
+      "actie": "Leg de tijdstippen van de hulpslag, de firewall, de datanetinstellingen en de pols of tikmaat van de Kroonklok op dagen 10, 14, 22 en 42 naast elkaar, met de exacte tijdvakken 02:40 tot 06:00.",
+      "reden": "Alleen met gelijktijdige tijdstippen kan worden getoetst of de hulpslag, het net of de schilden de nachtelijke gebeurtenissen veroorzaakten, of dat het toeval is."
     },
     {
-      "actie": "Aanleveren van de schildkaart en de schildlogs van Guardian Keeper voor het diepe woud, de oude eik, de vijver, de dennenrand, de holle weg en de heuvel.",
-      "reden": "Zonder schildkaart en logs kan niet worden vastgesteld of het schild op dezelfde nachten afwijkt, of dat de afwijking na het kabelwerk begon."
+      "actie": "Meet de leylijnsterkte op dagen 10, 18, 22, 26, 30, 34 en 38, de dagen met nachtelijke onrust waarvoor geen leylijnmeting bestaat.",
+      "reden": "Zonder metingen op die dagen kan niet worden getoetst of het ritme van de onrust samenvalt met lage leylijnsterkte, zoals op dag 14 en dag 42."
     },
     {
-      "actie": "Bevestigen of het kabelwerk daadwerkelijk op dag 3, dag 15 en dag 27 heeft plaatsgevonden, en de tijden van die werkzaamheden vastleggen.",
-      "reden": "De kabelhypothese berust nu op waarnemingen van de kabelploeg (BEA-102, BEA-115) en op een overtuiging van Beast Master (BEA-109). Pas met de werkplanning kan de hypothese worden getoetst."
+      "actie": "De Archmage legt het datanet-verzoek van dag 8 (ARC-106) volledig voor aan de Raad, met de gevraagde schema's en de reden van de geheimhouding.",
+      "reden": "De Raad is niet geïnformeerd over een verzoek dat het net betreft, en de Archmage heeft erkend dat hij dit heeft achtergehouden."
     },
     {
-      "actie": "Verstrekken van de bronbestanden van Beast Master en Oracle, met het record-ID-formaat, zodat de genoemde ID's gecontroleerd kunnen worden.",
-      "reden": "Geen van de Raadsleden heeft de ID's van de ander kunnen controleren, en de bronnen zijn daardoor nog niet bevestigd."
+      "actie": "De Archmage en de wachtcommandant leggen de route en tijden van de meetploegen op dagen 14 en 42 vast.",
+      "reden": "De meetploegen liepen voor zonsopgang langs de lijnen (ARC-105), en het is niet uitgesloten dat zij zelf de onrust of de lage metingen beïnvloedden."
     },
     {
-      "actie": "Onderzoeken of de Wachtsterren-conjunctie en de nachtelijke verstoring in de Oracle-data samenvallen, met gedeelde tijdstempels en zonder achteraf toegevoegde verklaringen.",
-      "reden": "De conjunctie-verklaring is in ORA-134 achteraf toegevoegd en de voorspelde zware nacht van dag 33 is niet als zodanig genoteerd (ORA-133)."
+      "actie": "De Guardian Keeper onderzoekt de melding van dag 22 om 01:50 (GUA-115) en stelt vast of er vooraf een waarschuwing was.",
+      "reden": "De melding kwam twee uur vóór de schildopening bij poort oost, en de Guardian Keeper heeft die eerder te snel afgewezen."
+    },
+    {
+      "actie": "De Guardian Keeper en de Beast Master leggen per nacht vast of de onrust en de openingen vóór of na 03:00 begonnen, en welke wachtrondes in het tijdvak 03:00 tot 06:00 liepen.",
+      "reden": "De ronde-regel van artikel 5 (GUA-106) betekent dat een opening in dit tijdvak ongemeld kan blijven, en dat maakt het ontbreken van een record geen bewijs van afwezigheid."
+    },
+    {
+      "actie": "Controleer of de signaalmastlamp, die op verzoek van de Archmage 's nachts is gedimd (ARC-102, ARC-106), en de firewallaanscherping (ENG-027) in de nachten van dagen 10, 14, 22 en 42 invloed hadden op de metingen of de schilden.",
+      "reden": "Dit zijn nachtelijke of recente wijzigingen die in het debat zijn genoemd maar nog niet zijn getoetst."
+    },
+    {
+      "actie": "Laat de Raad de ID-systemen van de verschillende bronnen aan elkaar koppelen in een gedeelde index, en laat de Historian de tegenstrijdigheden in HIS-103 en de csv-records (HIS-035, HIS-036, HIS-053, HIS-054) nagaan.",
+      "reden": "Raadsleden kunnen elkaars bronnen nu niet controleren, en de Historian heeft zelf fouten gemaakt in het gebruik van de vastlegdatums."
+    },
+    {
+      "actie": "Test de hackertheorie (ENG-110) en de vermeende infiltrant (GUA-116) met concrete controles, of verwijder ze uit de verslaglegging.",
+      "reden": "Beide zijn door de betreffende Raadsleden zelf als niet-gemeten erkend, maar worden nog wel als mogelijke verklaring gebruikt."
     }
   ],
   "risicos": [
     {
-      "risico": "Een schijnverband door ongesynchroniseerde klokken: de dierlogs, het Oracle-dagboek en de netlogs gebruiken mogelijk verschillende tijdbronnen, waardoor een volgorde of cyclus wordt gezien die er niet is.",
-      "mitigatie": "Eerst een gedeelde klokbron vaststellen of een omrekening maken, en pas daarna tijdlijnen vergelijken."
+      "risico": "Verdere wijzigingen aan de hulpslag, het datanet of de polsversterker zonder meting kunnen de Desync verergeren of de sporen van de oorzaak wissen.",
+      "mitigatie": "Leg de huidige instellingen vast voordat er iets wordt gewijzigd, en wijzig niets zonder dat de meting van dezelfde nacht is opgeslagen."
     },
     {
-      "risico": "Te snel ingrijpen op basis van de kabelhypothese, terwijl de oorzaak ook een wolf- en hertenpatroon, een voertekort, een leylijnverstoring of de Wachtsterren kan zijn.",
-      "mitigatie": "Geen kabel verwijderen of herstelwerk starten voordat de netdata en schildlogs de hypothese hebben getoetst, tenzij er een directe veiligheidsreden is."
+      "risico": "Schilden die van binnenuit worden geopend, en de ronde-regel van 03:00 tot 06:00, laten de burcht onbewaakt in het tijdvak waarin de onrust optreedt.",
+      "mitigatie": "Voer tijdelijk extra toezicht in op de poorten en de benedenstad in het tijdvak 03:00 tot 06:00, totdat de oorzaak is vastgesteld."
     },
     {
-      "risico": "Bevestigingsbias: Beast Master en Oracle hebben zelf een belang bij hun eigen verklaring, en Oracle heeft een verklaring achteraf toegevoegd.",
-      "mitigatie": "Elke bewering alleen meewegen als het record-ID is gecontroleerd door een ander Raadslid met een eigen bron."
+      "risico": "Het achtergehouden datanet-verzoek (ARC-106) schaadt het vertrouwen van de Raad en kan leiden tot besluiten op basis van onvolledige informatie.",
+      "mitigatie": "Maak het verzoek en het besluit van dag 8 openbaar aan alle Raadsleden, en leg de geheimhouding alleen op met een expliciet Raadsbesluit."
     },
     {
-      "risico": "Niets doen: als de periodieke verstoring een echt netprobleem is, kan die opbouwen en uiteindelijk een blijvende Desync veroorzaken.",
-      "mitigatie": "Periodieke monitoring instellen op de vermoedelijke tijdvensters (04:15 tot 04:50 uur) zodat de volgende cyclus direct wordt vastgelegd."
+      "risico": "Mystieke verklaringen, zoals de vermeende vloek en de Stille Winter (HIS-114), en visioenen (ORA-121, ORA-130), kunnen de onderzoeksrichting bepalen zonder bewijs.",
+      "mitigatie": "Behandel deze verklaringen als persoonlijke interpretaties en toets ze niet als feiten, tot er meetgegevens zijn die ze ondersteunen."
+    },
+    {
+      "risico": "Het vierdaagse ritme kan toeval zijn in een kleine steekproef, en een onjuiste aanname kan leiden tot verkeerde maatregelen.",
+      "mitigatie": "Toets het ritme op dag 46 met vooraf vastgelegde meetcriteria, en pas de conclusie aan als het ritme breekt."
+    },
+    {
+      "risico": "Het gebrek aan een definitie van de Desync maakt het onmogelijk te bepalen of een herstelstap werkt.",
+      "mitigatie": "Stel de definitie en meetmethode vast voordat herstelstappen worden genomen, en meet het resultaat met dezelfde methode."
     }
   ],
   "voorspelling": {
     "dag": 46,
-    "bewering": "Als het viertallige patroon standhoudt, verwacht de Raad rond 04:15 tot 04:50 uur op dag 46 opnieuw een nachtelijke uitschieter, zowel in de dierlogs als in het Oracle-dagboek. Dit is een voorspelling op basis van het patroon en niet op basis van een bewezen oorzaak; dag 33 liet het patroon al zien te breken.",
+    "bewering": "Als het vierdaagse ritme doorzet, treedt op dag 46 tussen 04:00 en 05:00 opnieuw nachtelijke onrust op bij wolven en herten, met mogelijk een zware nacht, en kan er een schildopening of verstoring van de netten optreden. Deze voorspelling is een extrapolatie van negen nachten zonder vastgesteld mechanisme. De zekerheid is laag, en de voorspelling kan ook mislukken. Het uitblijven van onrust op dag 46 moet de Raad als aanwijzing tegen het ritme behandelen.",
     "bewijs": [
       "ORA-142",
-      "BEA-091"
+      "BEA-091",
+      "BEA-092"
     ]
   }
 }
