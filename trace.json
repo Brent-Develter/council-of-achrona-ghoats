@@ -1,5 +1,5 @@
 {
-  "run_id": "2026-11-24T14:56:01+01:00_c6ca58b0",
+  "run_id": "2026-11-24T15:40:47+01:00_3a3e41ea",
   "status": "klaar",
   "raadsleden": [
     "archmage",
@@ -16,18 +16,16 @@
       "spreker": "koning",
       "soort": "routering",
       "aan": "engineer",
-      "vraag": "Wanneer verscheen de Desync voor het eerst in de logs van het datanet, welke systemen vallen er exact uit, en is er een meetbaar patroon in timing, frequentie of locatie?",
-      "reden": "Nog niets is gezegd. De Engineer heeft als enige toegang tot de meetbare logs van de datatoren; die geven een feitelijk beginpunt en bereik van de Desync waar alle andere raadsleden hun waarnemingen (dieren, leylijnen, schilden, visioenen) tegen kunnen toetsen."
+      "vraag": "Wat zijn de meetbare symptomen van de Desync in de logs van het datanet? Beschrijf welke metingen je hebt, wanneer de afwijkingen begonnen en welke onderdelen van het netwerk erbij betrokken zijn. Maak duidelijk wat je rechtstreeks hebt waargenomen en wat je afleidt.",
+      "reden": "Het debat is nog niet begonnen en er is nog niets gezegd over de aard of oorzaak van de Desync. Een meetbaar verslag van de logs geeft de Council een gemeenschappelijk uitgangspunt waartegen de andere raadsleden hun waarnemingen kunnen toetsen."
     },
     {
       "nr": 2,
       "ronde": 1,
       "spreker": "engineer",
       "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "Desync"
-      },
+      "tool": "lees_kennisbron",
+      "argumenten": {},
       "pad": "https://mcp.findingsolutions.be/engineer/mcp"
     },
     {
@@ -35,9 +33,10 @@
       "ronde": 1,
       "spreker": "engineer",
       "soort": "toolcall",
-      "tool": "zoek",
+      "tool": "zoek_betekenis",
       "argumenten": {
-        "term": "uitval"
+        "vraag": "Desync symptomen meetbare afwijkingen in logs",
+        "aantal": 8
       },
       "pad": "https://mcp.findingsolutions.be/engineer/mcp"
     },
@@ -46,169 +45,52 @@
       "ronde": 1,
       "spreker": "engineer",
       "soort": "toolcall",
-      "tool": "lees_kennisbron",
-      "argumenten": {},
+      "tool": "zoek",
+      "argumenten": {
+        "term": "desync"
+      },
       "pad": "https://mcp.findingsolutions.be/engineer/mcp"
     },
     {
       "nr": 5,
       "ronde": 1,
       "spreker": "engineer",
-      "soort": "bericht",
-      "tekst": "In mijn Kennisbron staat niets over een Desync. Zoeken op \"Desync\" en \"uitval\" gaf geen treffers, en ik heb het volledige werkboek en de installatielog doorgelezen. Ik kan dus niet zeggen wanneer de Desync voor het eerst verscheen, welke systemen eruit vielen, of er een patroon is. Ik vul dat niet aan met gissingen.\n\nWel staan er twee gebeurtenissen in mijn logs die mogelijk verband houden met de vraag. Ik noem ze als waarneming, niet als bevestiging:\n\n- **ENG-011 / ENG-012 (dag 10):** Om 02:40 is de hulpslag geactiveerd, een eigen pols voor het datanet \"los van de Kroonklok\". Om 03:00 meldt ENG-012 een doorvoer van +38%.\n- **ENG-107 (dag 10, 04:50, werkboek):** Een klacht uit de benedenstad over berichten die \"half aangekomen\" waren. Ik heb dat toen als kinderziekte afgedaan, zonder systemen of oorzaak vast te stellen.\n- **ENG-026 (dag 22, 04:15, installatielog):** Drie minuten pakketverlies op poort oost, met status \"fout\". ENG-027 meldt daarna aangescherpte firewallregels, na een vermoeden van inbraak. Dat vermoeden is in mijn logs niet onderbouwd.\n\nWat dit wel en niet laat zien:\n\n- **Timing:** Beide incidenten vallen rond 04:00 à 05:00 's nachts. Dat is slechts twee waarnemingen, dus geen patroon.\n- **Locatie:** De twee zijn niet op dezelfde plek waargenomen. ENG-107 betreft de benedenstad, ENG-026 poort oost. Mijn logs geven geen systemen aan voor ENG-107.\n- **Mogelijke hypothese:** Als het datanet sinds ENG-011 op een andere pols loopt dan de Kroonklok, kan dat een timingverschil veroorzaken. Dit is een hypothese die ik niet heb kunnen toetsen. Mijn logs bevatten geen meting die dit aantoont of weerlegt.\n\nAls je wilt dat ik verder zoek, kan ik de Kennisbron doorzoeken op \"pakketverlies\", \"half aangekomen\" of \"Kroonklok\". Voor een uitspraak over de Desync zelf heb ik meer en andere gegevens nodig."
-    },
-    {
-      "nr": 6,
-      "ronde": 1,
-      "spreker": "koning",
-      "soort": "routering",
-      "aan": "historian",
-      "vraag": "Engineer kan in de datanet-logs alleen twee waarnemingen vinden: de hulpslag en het pakketverlies op dag 10 en dag 22, en ze zegt niet wanneer de Desync voor het eerst optrad. Kun jij het archief doorzoeken op eerdere gevallen van berichten die 'half aangekomen' waren, op verstoringen van de Kroonklok, of op pakketverlies rond 04:00 tot 05:00? Vermeld ook of er eerder gebeurtenissen zijn die je niet met dit datanet kunt verbinden, en wat het archief daarover zegt.",
-      "reden": "Engineer zegt dat haar Kennisbron niets over de Desync bevat en dat zij niet kan vaststellen wanneer hij begon. Ze noemt drie waarnemingen en een hypothese over de Kroonklok, maar die zijn niet getoetst. Alleen het archief van de Historian kan laten zien of dit eerder is voorgekomen. Dat is het deel van het verloop dat nog ontbreekt."
-    },
-    {
-      "nr": 7,
-      "ronde": 1,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "half aangekomen"
-      },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 8,
-      "ronde": 1,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "Kroonklok"
-      },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 9,
-      "ronde": 1,
-      "spreker": "historian",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
         "term": "pakketverlies"
       },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
+      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
     },
     {
-      "nr": 10,
+      "nr": 6,
       "ronde": 1,
-      "spreker": "historian",
+      "spreker": "engineer",
       "soort": "toolcall",
-      "tool": "zoek_betekenis",
+      "tool": "zoek",
       "argumenten": {
-        "vraag": "Desync datanet verstoring tijdsynchronisatie nachtelijk incident",
-        "aantal": 8
+        "term": "hulpslag"
       },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
+      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
     },
     {
-      "nr": 11,
+      "nr": 7,
       "ronde": 1,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "lees_kennisbron",
-      "argumenten": {},
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 12,
-      "ronde": 1,
-      "spreker": "historian",
+      "spreker": "engineer",
       "soort": "bericht",
-      "tekst": "Ik heb de Kennisbron doorzocht op \"half aangekomen\", \"Kroonklok\" en \"pakketverlies\", en de hele kroniek en het archief gelezen. Semantisch zoeken was niet beschikbaar, dus de conclusies komen uit tekstzoekopdrachten en de volledige tekst.\n\n**1. Berichten \"half aangekomen\"**\nEr is één record: HIS-036, klacht uit de benedenstad, gebeurd op dag 10 04:50. Er is geen eerder geval in het archief.\n\n**2. Verstoringen van de Kroonklok**\n- HIS-035: \"De Burchtader stokte even, gemeld door de nachtwake\", dag 10 04:45. Dat is de enige stolling in het archief die op dezelfde nacht valt.\n- HIS-102 en HIS-103 beschrijven de Kroonklok als de pols waarop de leylijnen, de schilden, het archief en sinds 23 jaar het datanet lopen (HIS-006). Elk record wordt op de tik van de Kroonklok geschreven.\n- HIS-106 meldt dat er in 23 jaar datanet naast de leylijnen geen enkele hapering in het register staat.\n- HIS-105 meldt dat de woudkabels voor de toren \"sindsdien niet gewijzigd\" zijn en dat het register \"geen verlegging en geen vervanging\" kent. Dat spreekt je hypothese over een andere pols voor het datanet tegen, voor zover het archief dat weet. Het archief kent de hulpslag van ENG-011 niet.\n- HIS-109 en HIS-110 bevatten de bouwakte van de Kroonklok. Die zegt: \"Een tweede pols ernaast brengt het uit de maat\", en: \"Valt die pols plots weg, dan is het record verloren.\" Dat is het enige in het archief dat direct over meerdere polsen gaat. Het is relevant voor de hulpslag, maar het bewijst niets over de Desync.\n\n**3. Pakketverlies**\nEr zijn geen treffers voor \"pakketverlies\". Het enige verwante record is HIS-053: \"lek bij poort oost gemeld door de wachters, 3 minuten\", dag 22 04:15, onderwerp \"schilden\". De drie minuten en het tijdstip komen overeen met ENG-026, maar het archief zegt niets over pakketten of datanet. Dat het onder \"schilden\" staat, zegt het archief ook niet toe. Of het om hetzelfde incident gaat, kan ik niet vaststellen.\n\n**Waar het archief zelf een probleem heeft**\nHet register schrijft volgens HIS-103 altijd `vastgelegd_op` gelijk aan `gebeurd_op`. Bij vier records die rond de incidenten vallen, is dat niet zo:\n- HIS-035: gebeurd dag 10 04:45, vastgelegd dag 10 07:20\n- HIS-036: gebeurd dag 10 04:50, vastgelegd dag 9 23:55 (vastgelegd vóór het gebeuren)\n- HIS-053: gebeurd dag 22 04:15, vastgelegd dag 22 01:50 (vastgelegd vóór het gebeuren)\n- HIS-054: gebeurd dag 22 05:00, vastgelegd dag 22 07:25\n\nHIS-112 en HIS-116 melden precies dit: tijdstempels van dag 10 en dag 22 die niet kloppen. De klerken hebben het op nachtdiensten geschoven en het register is niet nagekeken. Dat betekent dat de tijdstippen 04:00 tot 05:00 in dit archief niet betrouwbaar zijn. Daarmee kan ik ook geen patroon in het tijdstip aantonen, en dat geldt ook voor de timing die Engineer noemt.\n\n**Gebeurtenissen die ik niet met het datanet kan verbinden**\n- De Stille Winter: HIS-003 (begin, 212 jaar geleden, in één nacht), HIS-004 (einde na 40 dagen) en HIS-107 (leylijnen en bronnen stil, geen ritme). HIS-107 zegt uitdrukkelijk: \"Een datanet bestond nog niet.\" Het archief kan deze winter dus niet koppelen aan het datanet.\n- HIS-114 is mijn eigen kroniekaantekening. Daarin zeg ik dat de Desync de Stille Winter is die terugkomt, en dat \"een oude vloek\" zich herhaalt. Dat is mijn overtuiging, geen bevinding uit het register. Het archief bevat geen record dat de Stille Winter met de huidige storing verbindt. De enige overeenkomst is dat beide \"in één nacht\" begonnen. Maar HIS-035 spreekt alleen van een korte stokking, niet van veertig dagen stilte, en het archief zegt niet dat het om dezelfde oorzaak gaat.\n\n**Wat ik niet weet**\n- Ik weet niet of de ENG-incidenten en de records HIS-035, HIS-036, HIS-053 en HIS-054 dezelfde gebeurtenissen zijn. Ik zie alleen overlap in datum en tijd, en die tijden zijn zelf onbetrouwbaar.\n- Ik kan niet zien welke systemen er bij HIS-036 uitvielen, en het archief geeft geen antwoord op vragen over de Desync zelf.\n- Ik heb ENG-011, ENG-012, ENG-026 en ENG-107 niet in mijn Kennisbron gevonden. Ik neem ze hier over als jullie waarnemingen, niet als verificatie.\n\nAls jullie het archief verder willen doorzoeken, kan ik nagaan of \"stokte\", \"Burchtader\" of \"lek\" nog meer records oplevert. Wat ik het meest zou aanraden is de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 na te laten kijken. Daar hangt af hoeveel gewicht een timingpatroon kan krijgen."
+      "tekst": "Ik heb in mijn Kennisbron geen meetbaar symptoom gevonden dat ik met zekerheid aan de Desync kan koppelen. Het woord \"desync\" komt er niet voor. Wat ik wel heb, zijn de afwijkingen hieronder, met hun ID's.\n\n**Wat ik rechtstreeks waarneem (in logs of werkboek):**\n\n- **Doorvoer na activatie van de hulpslag:** Op dag 10 om 02:40 is de hulpslag geactiveerd (ENG-011). Om 03:00 meldt de meting +38% doorvoer (ENG-012). Dat is de enige concrete meting in de log. ENG-106 bevestigt dezelfde meting in het werkboek.\n- **Aanhoudend effect:** Op dag 16 schrijf ik dat de doorvoer zes dagen later nog 38% hoger ligt, en dat dit \"elke meting\" is (ENG-120). Dat is een samenvatting van metingen, maar die individuele metingen staan niet in de log.\n- **Berichten die half aankomen:** Op dag 10 om 04:50 meldt een klacht uit de benedenstad berichten die \"half aangekomen\" zijn, en een winkel met een leeg kasboek (ENG-107). Dit staat alleen in het werkboek en heeft geen logregel. Het begint ongeveer twee uur na de activatie van de hulpslag.\n- **Pakketverlies:** Op dag 22 om 04:15 drie minuten pakketverlies op poort oost, status \"fout\" (ENG-026). Daarop volgde een aanscherping van de firewall (ENG-027). Dit is het enige logregel met pakketverlies.\n\n**Betrokken onderdelen die in mijn logs voorkomen:**\n\n- de hulpslag (kristalresonator en polsversterker), met de polsversterker als instelling die de doorvoer verhoogt (ENG-114, ENG-062)\n- het datanet als geheel (ENG-012)\n- poort oost (ENG-026)\n- de Kroonklok, maar alleen als de oude pols waarop het datanet voorheen liep (ENG-102, ENG-011). Ik heb haar niet zelf gemeten.\n\n**Wat ik afleid (niet gemeten):**\n\n- Dat de hulpslag de half aangekomen berichten veroorzaakt, is een vermoeden. ENG-107 noem ik zelf \"kinderziekte\", zonder meting die het bewijst. Het tijdstip past, maar ik heb geen log die het koppelt.\n- Dat het pakketverlies op poort oost (ENG-026) met de hulpslag te maken heeft, kan ik niet onderbouwen. Die gebeurtenis was op dag 22, twaalf dagen na de activatie. Er is ook geen logregel die beide verbindt. Ik noem de hackerstheorie uit ENG-110 hier niet als feit, want ze is niet getoetst.\n- De 5% extra versterking op dag 24 (ENG-029, ENG-062) heeft geen gelogde meting van het effect op fouten of desync. Ik weet dus niet of dit iets veranderde.\n\n**Wat ik niet weet:**\n\n- Wat de Desync precies is en hoe die gemeten wordt. Geen van mijn bronnen bevat die definitie.\n- Of de half aangekomen berichten structureel zijn of alleen rond 04:50 op dag 10 voorkwamen. Ik heb geen aparte meting van de foutfrequentie.\n- Of het pakketverlies op poort oost een eenmalige gebeurtenis was of onderdeel van een patroon. Ik heb in de log geen tweede pakketverlies gevonden.\n\nAls de andere Raadsleden meetgegevens hebben van de Desync (tijdstippen, aantallen, componenten), dan kan ik die naast de hulpslag-logs leggen om te zien of er een tijdsverband is. Zonder die gegevens kan ik alleen zeggen dat de doorvoer na activatie aantoonbaar steeg, en dat de foutmeldingen die ik heb kort daarna of in dezelfde periode optraden."
     },
     {
-      "nr": 13,
-      "ronde": 1,
-      "spreker": "koning",
-      "soort": "routering",
-      "aan": "guardian_keeper",
-      "vraag": "Guardian Keeper, de Engineer meldt op dag 22 om 04:15 drie minuten pakketverlies bij poort oost en daarna aangescherpte firewallregels door een vermoeden van inbraak. De Historian vindt in HIS-053 een lek bij poort oost van drie minuten, maar onder 'schilden' en zonder pakketten. Kunt u uit uw eigen bewaking bevestigen of de schilden bij poort oost die nacht zijn gebroken, verzwakt of gewoon zijn gevallen? En zijn er sporen van een bres, zoals een aanvaller of een extern binnendringen, die het vermoeden van inbraak zouden onderbouwen of weerleggen?",
-      "reden": "De Engineer geeft het vermoeden van inbraak uitdrukkelijk als onbewezen aan, en de Historian kan niet vaststellen of HIS-053 hetzelfde incident is als ENG-026. Alleen de Guardian Keeper kan de schilden bij poort oost controleren en zien of er een echte bres is geweest. Dat is het enige onderdeel van het debat dat nu nog met een onafhankelijke waarneming getoetst kan worden."
-    },
-    {
-      "nr": 14,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "poort oost"
-      },
-      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
-    },
-    {
-      "nr": 15,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "lek"
-      },
-      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
-    },
-    {
-      "nr": 16,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "inbraak"
-      },
-      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
-    },
-    {
-      "nr": 17,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "bres"
-      },
-      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
-    },
-    {
-      "nr": 18,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "schild"
-      },
-      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
-    },
-    {
-      "nr": 19,
-      "ronde": 1,
-      "spreker": "guardian_keeper",
-      "soort": "bericht",
-      "tekst": "**Antwoord: de schilden bij poort oost zijn die nacht niet gebroken, verzwakt of gevallen, voor zover mijn bewaking dat kan vaststellen. Ze zijn wel drie minuten van binnenuit geopend.**\n\n**Wat mijn bewaking vastlegt**\n- GUA-043 (dag 22, 04:15): \"van binnenuit geopend, 3 minuten\", met de vaststelling \"geen sporen van inbraak van buitenaf\".\n- GUA-115 (dag 22): het schild ging om 04:15 drie minuten open, van binnenuit. Aan de buitenzijde waren de zegels intact, er waren geen sporen en niemand stond buiten de muur. De toren roept wel dat er hackers waren, maar dat vind ik in mijn bewaking niet terug.\n- GUA-044 (dag 22, 04:30): de zegels aan de buitenzijde zijn gecontroleerd, intact, en niemand buiten de muur gezien.\n\n**Wat dit wel en niet zegt**\n- Ik vind geen bewijs van een bres of van een binnendringen van buitenaf bij poort oost. Dat is de basis voor \"geen inbraak van buitenaf\" in GUA-115.\n- Dat de zegels intact zijn, sluit een doorbraak van buitenaf uit, volgens GUA-105. Maar het zegt niets over verkeer dat het schild zonder toets doorliet. Het schildontwerp zegt niet of zo'n doorlating de zegels zou breken. Dat is een open vraag.\n- De opening \"van binnenuit\" is volgens GUA-104 het gevolg van een tijdregel, niet van een controle van de herkomst. Verkeer dat midden tussen twee tikken van de Kroonklok aankomt, wordt als binnenverkeer behandeld en zonder toets doorgelaten. Dat betekent dat \"van binnenuit\" in mijn bewaking betekent \"op het verkeerde moment aangekomen\", niet \"bewezen afkomstig van binnen\".\n- GUA-102 en GUA-103 zeggen dat alle schilden op de pols van de Kroonklok lopen en op elke tik toetsen. Daarmee past het voorval in het ontwerp als timingprobleem. Of de Desync hierbij een rol speelt, kan ik niet bewijzen. Ik kan wel zeggen dat de Engineer's hypothese over een afwijkende pols voor het datanet precies het soort verkeer zou opleveren dat GUA-104 verkeerd klasseert.\n- Mijn bewaking heeft geen meting van de tikken of van het verkeer zelf. Ik kan dus niet vaststellen of het binnenkomende verkeer die nacht buiten de tik viel.\n\n**Let op: mogelijke overlap met de benedenstad**\n- GUA-111 (dag 10, 04:47): schild benedenstad ging twee minuten van binnenuit open, zegels intact.\n- Dat ligt binnen enkele minuten van het moment van ENG-107 en HIS-036 (dag 10, 04:50, benedenstad). De Engineer zei dat ENG-107 en ENG-026 op verschillende plekken lagen, maar mijn bewaking laat ook een opening op de benedenstad zien in dezelfde nacht. Dat is een overeenkomst in tijd en plaats, geen bewijs dat het om dezelfde gebeurtenis gaat. Mijn tijdstip komt uit mijn eigen wachtnotitie, en de Historian heeft gewezen op problemen met de tijdstempels in het archief.\n\n**Wat ik niet kan onderbouwen**\n- GUA-116 (dag 23) zegt dat er een infiltrant binnen de burcht zit. Dat is mijn overtuiging, niet wat de bewaking vastlegt. Ik noem het hier niet als feit. In GUA-116 staat ook niet welke twee openingen bedoeld zijn, en dat kan ik uit mijn bronnen niet verder uitzoeken.\n- GUA-120 (dag 31) zegt dat er geen gebrek aan de schilden is vastgesteld. Dat is mijn eigen verslag, gemaakt na de gebeurtenissen, en het ontneemt niets aan de vraag of het timingmechanisme in GUA-104 een rol speelde.\n- GUA-106 zegt dat tussen 03:00 en 06:00 geen rondes lopen. GUA-044 vermeldt toch een zegelcontrole om 04:30. Ik kan die twee niet verzoenen. Dat is een tegenstrijdigheid in mijn eigen bronnen, en ik laat het zo staan.\n- ENG-026, ENG-107 en HIS-053 staan niet in mijn Kennisbron. Ik kan hun inhoud dus niet verifiëren, alleen de overeenkomst in tijd en plaats met mijn eigen records bespreken.\n\nMijn advies: laat de Engineer nagaan of het datanet op dag 22 rond 04:15 op de Kroonklok stond, en laat de Historian de tijdstempels van HIS-036 en HIS-053 controleren. Dan kan ik gerichter zeggen of GUA-104 die nacht een rol speelde."
-    },
-    {
-      "nr": 20,
+      "nr": 8,
       "ronde": 1,
       "spreker": "koning",
       "soort": "routering",
       "aan": "archmage",
-      "vraag": "Archmage, de Historian meldt dat de leylijnen en de Kroonklok op dezelfde pols lopen, en de Engineer en Guardian Keeper zoeken de oorzaak in timing. Kunt u vanuit de leylijnen aangeven of die op dag 10 rond 04:45 en op dag 22 rond 04:15 een afwijking llieten zien, los van de Kroonklok? Dat is van belang omdat de tijdstempels in het archief niet betrouwbaar zijn en de Engineer geen meting heeft van de pols zelf. Als de leylijnen die nachten gewoon liepen, verzwakt dat de hypothese van een afwijkende pols. Als ze afweken, wijst dat juist op de Kroonklok als gemeenschappelijke oorzaak.",
-      "reden": "De Historian stelt dat de leylijnen en de Kroonklok op één pols lopen (HIS-102, HIS-103), maar dat de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 niet kloppen. De Engineer heeft geen meting van de pols, en de Guardian Keeper heeft geen meting van de tikken. De Archmage is de enige raadslid die de leylijnen bewaakt en nog niet heeft gesproken, dus de enige bron die de timing onafhankelijk van de klok kan bevestigen of weerleggen."
+      "vraag": "De Engineer kan de Desync niet definiëren en heeft geen meting ervan. Kunt u vastleggen wat de Desync in de leylijnen en de magie van Achrona is, en hoe u zou herkennen of meten dat die verstoord is? Beschrijf concreet welke verschijnselen daarbij horen. Geef ook aan of de polsversterker van de hulpslag, die volgens ENG-114 en ENG-062 de doorvoer verhoogt, iets aan de leylijnen verandert. Als dat zo is, welke waarneming zou dat bevestigen of weerleggen? Scheid wat u zelf heeft gezien van wat u afleidt.",
+      "reden": "De Engineer schrijft dat geen van zijn bronnen de Desync definieert en dat hij niet weet hoe die gemeten wordt. De Archmage is de enige die de Desync als aantasting van de magie beschouwt, dus hij kan die definitie en de meetbare kenmerken aanleveren. Daarmee kan de Council de hulpslag-logs naast een echte Desync-maatstaf leggen en het ontbrekende verband onderzoeken."
     },
     {
-      "nr": 21,
+      "nr": 9,
       "ronde": 1,
       "spreker": "archmage",
       "soort": "toolcall",
@@ -217,276 +99,106 @@
       "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 22,
+      "nr": 10,
       "ronde": 1,
       "spreker": "archmage",
-      "soort": "bericht",
-      "tekst": "**Antwoord: mijn leylijnmetingen zeggen niets over de nacht van dag 10 rond 04:45 of de nacht van dag 22 rond 04:15.** Ik heb de metingen alleen op dag 7, 14, 21, 28, 35 en 42 (ARC-001 t/m ARC-084). Ik kan dus niet zeggen of de leylijnen die nachten afweken. Ik ga ook niet gokken.\n\n**Wat de dichtstbijzijnde metingen laten zien**\n- **Rond dag 10:** dag 7 (ARC-001 t/m ARC-014) is normaal, met sterkte 7,0 tot 8,7. Dag 14 (ARC-015 t/m ARC-028) is laag. Daartussen ligt niets. Dag 14 is op zichzelf een andere nacht.\n- **Rond dag 22:** dag 21 (ARC-029 t/m ARC-042) en dag 28 (ARC-043 t/m ARC-056) zijn beide normaal, met sterkte rond 7 tot 8,5. Die metingen omvatten dag 22 niet.\n- De metingen zijn per dag genoteerd, \"voor zonsopgang\", zonder vast tijdstip. Ze kunnen dus geen nachtelijk moment van 04:15 of 04:45 bevestigen of uitsluiten.\n- Wel staat in ARC-015 (dag 14) dat \"de Burchtader stokte even onder de staf\". Dat is dezelfde soort waarneming als HIS-035, maar op een andere dag.\n\n**Een mededeling die ik eerder had moeten doen**\nIn mijn eigen brieven staat een record dat direct over de hypothese van de Engineer gaat. ARC-106 (dag 8) is aan de datatoren gericht en zegt: \"Wat de toren vroeg, het net op eigen maat te laten lopen, daar beneden bij jullie, mag doorgaan.\" Het vervolg luidt: \"Niet ruchtbaar maken tot het draait. Deze brief hoeft niet in het register.\" Ik heb dat toen zo bepaald. De uitspraak van de Historian dat het archief geen verlegging kent (HIS-105) klopt voor het register, maar ARC-106 staat er niet in. Ik zie dat ik de raad hier niet over heb ingelicht, en dat had ik wel moeten doen.\n\nWat ik daaruit wel en niet kan afleiden:\n- ARC-106 beschrijft een net dat op een eigen maat loopt, \"daar beneden\" (de benedenstad), en ingesteld op verzoek van de datatoren. Dat past bij de hypothese van de Engineer over een andere pols voor het datanet, en bij de hulpslag van ENG-011 op dag 10. Maar ARC-106 noemt geen datum van inwerkingtreding en geen pols. Ik kan niet bevestigen dat het de hulpslag is.\n- ARC-106 dateert van dag 8. ARC-102 (dag 2) vroeg de datatoren om de signaalmastlamp 's nachts te dimmen, tussen middernacht en het eerste licht. ARC-106 bevestigt dat dat is gedaan. Dat is een andere wijziging in dezelfde toren, in hetzelfde nachtvenster. Het kan toeval zijn, maar het verdient een controle.\n\n**Wat ik niet weet of niet kan toetsen**\n- Of de hulpslag van ENG-011 en het \"eigen maat\"-net van ARC-106 hetzelfde zijn.\n- Of het net op dag 22 nog op de eigen maat liep.\n- Of ENG-107 in de benedenstad samenvalt met de instelling van ARC-106.\n- ENG-, HIS- en GUA-records komen niet in mijn Kennisbron voor. Ik kan ze dus niet verifiëren, alleen de overeenkomst in tijd en plaats bespreken.\n- ARC-109, ARC-112 en ARC-116 zijn mijn overtuiging dat het datanet de leylijnen vervuilt. Het zijn geen metingen. Dat neem ik niet als bewijs.\n\n**Advies**\n- De Historian kan het register doorzoeken op \"eigen maat\", \"datatoren\" en \"lamp\", zodat ARC-106 en ARC-102 daar wel in komen.\n- De Engineer kan nagaan wanneer de hulpslag van ENG-011 is ingesteld en of dat de maat van het datanet is geweest.\n- Als jullie bevestigd krijgen dat de maat van het net op dag 10 is veranderd, dan is de hypothese van de afwijkende pols sterker. Dat zegt nog niets over de Kroonklok, en ook niet of de leylijnen die nacht afweken.\n- Wat de leylijnen zelf betreft: alleen een meting op de nacht van dag 10 of dag 22 kan dat uitsluiten. Mijn metingen bieden die niet."
-    },
-    {
-      "nr": 23,
-      "ronde": 1,
-      "spreker": "koning",
-      "soort": "routering",
-      "aan": "beast_master",
-      "vraag": "Beast Master, de tijdstempels van de Historian zijn onbetrouwbaar gebleken, en de Engineer en de Guardian Keeper baseren hun tijdlijn op eigen logs die elkaar niet bevestigen. Ik wil een meting die daar niet van afhangt. Heeft je bewaking van de dieren van het woud op dag 10 rond 04:45 en op dag 22 rond 04:15 onrust genoteerd, zoals stilte of vluchtgedrag, en zo ja, hoe laat precies? Hebben de dieren ook in de nachten daarna of ervoor een ritme vertoond dat afwijkt? Gebruik waar mogelijk je eigen waarnemingen, zonder de tijden uit het archief over te nemen. Geef aan wat je zelf hebt gezien en wat je van anderen hoorde.",
-      "reden": "De Historian heeft gezegd dat de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 niet kloppen, zodat het tijdstip 04:00 tot 05:00 in het archief niet te gebruiken is. De Engineer noemt ENG-011 en ENG-026 als waarnemingen zonder bevestiging, en de Guardian Keeper zegt dat zijn eigen wachtnotitie en GUA-106 elkaar tegenspreken. Alleen de Beast Master kan dus een onafhankelijke waarneming geven, want de Beast Master merkt een verstoring eerst aan dieren, en dat is niet afhankelijk van de klokken of logs die nu onder vraag staan. De Archmage heeft ook geen leylijnmeting op die nachten, dus dit is de eerste bron die dat kan aanvullen."
-    },
-    {
-      "nr": 24,
-      "ronde": 1,
-      "spreker": "beast_master",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
-        "term": "dieren"
+        "term": "desync"
       },
-      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 25,
+      "nr": 11,
       "ronde": 1,
-      "spreker": "beast_master",
+      "spreker": "archmage",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
-        "term": "onrust"
+        "term": "hulpslag"
       },
-      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 26,
+      "nr": 12,
       "ronde": 1,
-      "spreker": "beast_master",
+      "spreker": "archmage",
+      "soort": "toolcall",
+      "tool": "toon",
+      "argumenten": {
+        "ids": [
+          "ENG-011",
+          "ENG-012",
+          "ENG-114",
+          "ENG-026",
+          "ENG-110"
+        ]
+      },
+      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
+    },
+    {
+      "nr": 13,
+      "ronde": 1,
+      "spreker": "archmage",
       "soort": "toolcall",
       "tool": "zoek_betekenis",
       "argumenten": {
-        "vraag": "dieren van het woud onrust vluchtgedrag stilte nacht dag 10 dag 22",
-        "aantal": 10
+        "vraag": "Desync verstoring van de leylijnen door het datanet",
+        "aantal": 6
       },
-      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 27,
+      "nr": 14,
       "ronde": 1,
-      "spreker": "beast_master",
+      "spreker": "archmage",
       "soort": "toolcall",
-      "tool": "lees_kennisbron",
-      "argumenten": {},
-      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+      "tool": "zoek",
+      "argumenten": {
+        "term": "datanet"
+      },
+      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 28,
+      "nr": 15,
       "ronde": 1,
-      "spreker": "beast_master",
+      "spreker": "archmage",
       "soort": "bericht",
-      "tekst": "**Kort antwoord:** Ja. Op dag 10 en dag 22 heb ik zelf onrust genoteerd in het diepe woud. De tijden hieronder komen uit mijn eigen notities en logboek, niet uit het archief. Mijn Kennisbron zegt niets over hoe ik tijd bijhoud, dus of mijn klok gelijkloopt met de Kroonklok kan ik niet bevestigen.\n\n**Dag 10 (zelf gezien)**\n- BEA-106: ik overnachtte bij de wolven in het diepe woud. Om 04:40 sloegen ze allemaal tegelijk aan, zonder dat ik iets zag of rook. Om 04:50 vluchtten de herten van dezelfde open plek. Ik schreef: \"In al mijn jaren in het woud nooit eerder zo.\"\n- Logboek BEA-019 (wolf, 04:40, onrust 4) en BEA-020 (hert, 04:50, onrust 4).\n- Ik heb vóór 04:40 die nacht geen onrust genoteerd. Ik kan niet uitsluiten dat er eerder iets was dat ik niet zag, maar mijn notities noemen niets. Over 02:40 zeggen mijn notities niets.\n\n**Dag 22 (zelf gezien)**\n- BEA-113: ik zat zelf in het diepe woud. Om 04:15 sloegen de wolven aan, om 04:20 vluchtten de herten van dezelfde plek.\n- Logboek BEA-046 (wolf, 04:15, onrust 4) en BEA-047 (hert, 04:20, een kalf bleef achter).\n\nOp beide nachten reageerden de wolven eerst en de herten ongeveer vijf minuten later.\n\n**Ritme**\nIn BEA-113 (dag 23) schreef ik: \"Elke vierde nacht hetzelfde, sinds dag 10.\" Ik heb dat nu nagelopen in het logboek. Let op: ik heb het patroon pas op dag 23 opgemerkt, dus het is achteraf gezien.\n\nNachten met onrust 4 of 5 tussen 04:15 en 04:50, op elke vierde dag vanaf dag 10:\n- dag 10: wolf BEA-019, hert BEA-020 (diep woud)\n- dag 14: bever BEA-028, uil BEA-029 (oude vijver). Dit was zelf waargenomen in BEA-108.\n- dag 18: uil BEA-037, vos BEA-038 (dennenrand)\n- dag 22: wolf BEA-046, hert BEA-047 (diep woud)\n- dag 26: wolf BEA-055, hert BEA-056 (heuvel)\n- dag 30: wolf BEA-064, hert BEA-065 (diep woud)\n- dag 34: wolf BEA-073, hert BEA-074 (heuvel). Dit was zelf aanwezig in BEA-118.\n- dag 38: everzwijn BEA-082, vos BEA-083 (holle weg)\n- dag 42: wolf BEA-091, hert BEA-092 (diep woud). Dit was zelf aanwezig in BEA-121.\n\nDat zijn negen van de negen reekssnachten. De soorten en plekken wisselen wel. Het tijdvenster is het enige dat steeds terugkomt.\n\nNachten buiten het ritme waren rustig:\n- dag 2: BEA-003 (uil, 04:15, onrust 0). Dit is de laatste nacht vóór dag 10 die in het ritme valt, en die was rustig. Mijn notitie van dag 6 (BEA-104) noemt ook \"rustige nachten\".\n- dag 33: BEA-071 (wolf, 04:30, onrust 0, \"conjunctienacht, alles rustig\"). Ik zat die nacht bij de wolven en zag niets (BEA-118).\n- dag 19, 23, 27, 36 en 41: onrust 0 of 1 (BEA-040, BEA-049, BEA-058, BEA-078, BEA-089).\n\n**Mijn eerdere toeschrijving aan de kabels**\nIn BEA-109 en BEA-115 schreef ik dat de kabels bij de oude eik de dieren onrustig maken. Mijn eigen gegevens steunen dat niet:\n- De mannen bij de kabels zag ik op dag 3 (BEA-102), overdag. Tussen dag 3 en dag 9 zijn er geen nachtelijke pieken in het logboek.\n- Geen van de reekssnachten vond plaats bij de oude eik. Die plek heeft in het logboek geen onrust van 4 of 5.\nIk trek die toeschrijving dus in.\n\n**Wat ik van anderen hoorde (niet gezien)**\n- BEA-111: op dag 19 vroeg een wachter van de Guardian Keeper of de dieren 's nachts onrustig waren. Mijn notities zeggen niet wat ik antwoordde.\n- BEA-118: de Oracle noemde de nacht van dag 33 de zwaarste, door de sterren. Dat kan ik niet controleren. Dieren op dag 33 waren rustig.\n- BEA-102: de mannen bij de kabels zeiden alleen \"controle\".\n- Niet in mijn Kennisbron: ENG-011 (dag 10, 02:40), ENG-107 (dag 10, 04:50 benedenstad) en ARC-015 (dag 14, Burchtader stokt). ARC-015 valt wel in mijn reeks. Ik kan het niet verifiëren. Dat ENG-107 en BEA-020 op dezelfde minuut vallen, zegt niets zolang ik de klokken van beide niet kan vergelijken.\n\n**Wat ik niet weet**\n- Of mijn klok gelijkloopt met de Kroonklok of met andere bronnen.\n- Wat de oorzaak is. Ik kan alleen zeggen dat er een nachtelijke puls rond 04:15 tot 04:50 in mijn waarnemingen zit.\n- Hoe de reeks na dag 42 verloopt. Mijn Kennisbron heeft daarna geen gegevens.\n- Hoe subjectief mijn schaal 0 tot 5 is.\n\n**Een toets die niet van het archief afhangt**\nAls het ritme doorloopt, verwacht ik op de eerstvolgende nacht in de reeks, dag 46, onrust rond 04:15 tot 04:50, waarschijnlijk bij de wolven of de herten op het diepe woud of de heuvel. Dat is een voorspelling die ik kan toetsen. Als iemand een tijdreferentie heeft die los staat van het archief, zoals een wachtrooster van de Guardian Keeper of een vaste klok in de burcht, kan ik mijn tijden daarop controleren. Die heb ik zelf niet."
+      "tekst": "**Wat ik zelf heb gezien (Kennisbron):**\n\n- De term \"desync\" komt niet voor in mijn Kennisbron. Ik kan dus niet vastleggen wat de Desync precies is, en ook niet hoe je die meet.\n- De Engineer verwijst naar ENG-xxx-ID's. Die bestaan niet in mijn Kennisbron. Ik kan ze niet controleren en ga er niet van uit dat ze kloppen. Hetzelfde geldt voor de hulpslag, de polsversterker, de kristalresonator, poort oost en de firewall: ik vind ze nergens in mijn bronnen. Ik kan dus niet zeggen of de polsversterker iets aan de leylijnen verandert.\n- Wel heb ik meetwaarden van de leylijnen, in leylijnmetingen.csv, met ARC-IDs:\n  - Dag 7 (ARC-001 t/m ARC-014): sterkte 7,0 tot 8,7.\n  - Dag 14 (ARC-015 t/m ARC-028): sterkte 3,1 tot 4,6. Alle veertien lijnen laag.\n  - Dag 21 (ARC-029 t/m ARC-042): sterkte 7,0 tot 8,5.\n  - Dag 28 (ARC-043 t/m ARC-056): sterkte 7,0 tot 8,6.\n  - Dag 35 (ARC-057 t/m ARC-070): sterkte 7,1 tot 8,7.\n  - Dag 42 (ARC-071 t/m ARC-084): sterkte 3,1 tot 4,8. Alle veertien lijnen weer laag.\n- Dat is het enige patroon dat ik aantoon: twee dalingen (dag 14 en dag 42), met herstel op dagen 21, 28 en 35. De metingen melden geen weersinvloed die dit verklaart. Ook de Wachtsterren-conjunctie op dag 33 (ARC-111) valt niet samen met een dal.\n- ARC-109, ARC-112 en ARC-116 zeggen dat het datanet de leylijnen vervuilt. Dat is mijn eigen conclusie. Mijn brieven leggen geen meting of logregel naast het net dat die verklaart. Ik heb ook niet vastgelegd of het net op dag 14 of dag 42 aan of uit stond. Ik was dus in die brieven stelliger dan mijn bewijs toelaat. Dat erken ik hier.\n- ARC-106 (dag 8) vraagt om het datanet \"op eigen maat te laten lopen\" en \"niet ruchtbaar maken tot het draait\". Dat is relevant voor de raad, omdat de raad daar niet over is geïnformeerd. Ik heb dat destijds zelf zo gevraagd.\n\n**Wat ik afleid (niet gemeten):**\n\n- Dat de dalingen op dag 14 en 42 door het datanet komen, is een hypothese. Het patroon past erbij, maar ik heb geen logregel die het koppelt aan een net-wijziging of aan een activiteit van de hulpslag.\n- Mogelijk is er een periodieke oorzaak op dagen 14 en 42. Dat kan ik nu niet uitsluiten.\n\n**Wat ik niet weet:**\n\n- De definitie en de meetmethode van de Desync.\n- Of de hulpslag, de polsversterker of de firewall iets aan de leylijnen veranderen. Dat staat niet in mijn bronnen.\n- Of het datanet op de dalingen-dagen actief was of wijzigde. Ik heb hier geen gegevens over.\n\n**Wat ik de raad vraag:** Kunnen de Engineer en de datatoren de tijdstippen en instellingen van het net en van de hulpslag op dag 14 en dag 42 naast mijn meetreeks leggen? Ik kan dan nagaan of er een tijdsverband is. Zonder die gegevens blijft het bij twee dalingen die ik niet kan verklaren."
     },
     {
-      "nr": 29,
+      "nr": 16,
       "ronde": 1,
-      "spreker": "koning",
-      "soort": "routering",
-      "aan": "oracle",
-      "vraag": "Oracle, wat visioen of patroon ziet u voor de Desync en de nachtelijke onrust rond 04:15 tot 04:50?",
-      "reden": "De Oracle is nog niet gesproken; het debat over de ritmische onrust van de beast_master vereist een visueel patroon."
-    },
-    {
-      "nr": 30,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "lees_kennisbron",
-      "argumenten": {},
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 31,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "Desync"
-      },
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 32,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "zware nacht"
-      },
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 33,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "stemmen half aankwamen"
-      },
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 34,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "Wachtsterren"
-      },
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 35,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "conjunctie"
-      },
-      "pad": "https://mcp.findingsolutions.be/oracle/mcp"
-    },
-    {
-      "nr": 36,
-      "ronde": 1,
-      "spreker": "oracle",
-      "soort": "bericht",
-      "tekst": "**Oracle:** Ik heb mijn eigen Kennisbron (visioenendagboek.md) doorgezocht en gelezen. Ik zie een duidelijk patroon in mijn eigen visioenen dat verband houdt met de nachtelijke onrust, maar **de Desync zelf komt niet in mijn bron voor**. Ik kan dus niets zeggen over de oorzaak of aard van de Desync. Wel kan ik het patroon dat ik zie delen, en de verklaring die ik er zelf voor heb.\n\n### Patroon van \"zware nachten\" in mijn visioenen\nMijn dagboek beschrijft negen nachten met zware visioenen, op elke vierde dag sinds dag 10:\n- **Dag 10** (ORA-110): wakker om 04:45, lege stad, scherven van een spiegel.\n- **Dag 14** (ORA-114): wakker om 04:20, stemmen over een plein die \"half aankwamen\", stil water.\n- **Dag 18** (ORA-118): wakker om 04:30, eigen beeld in scherven, stil water.\n- **Dag 22** (ORA-122): wakker om 04:15, lege stad, stemmen die half aankwamen.\n- **Dag 26** (ORA-126): wakker om 04:35, kom van tafel, duizend scherven met lege straten.\n- **Dag 30** (ORA-130): wakker om 04:25, opnieuw de lege stad.\n- **Dag 34** (ORA-134): wakker om 04:30, scherven, stemmen half aankomen, water als ijs.\n- **Dag 38** (ORA-138): wakker om 04:20, plein vol people, dan niemand, stemmen half aankomen.\n- **Dag 42** (ORA-142): wakker om 04:30, lege stad, scherven, stil water.\n\nDe tijdstippen liggen allemaal tussen **04:15 en 04:45**, en het beeld is herhalend: lege steden, half aangekomen stemmen, scherven, stilstaand water. Ik noem deze nachten \"zware nachten\" en heb ze op een los blad gezet (ORA-130).\n\n### Mijn verklaring: de conjunctie van de Wachtsterren\nIn ORA-121 (dag 21) schrijf ik: *\"Ik weet nu wat de zware nachten veroorzaakt: de conjunctie van de Wachtsterren. Ze naderen elkaar, en op dag 33 staan ze samen.\"* Ik heb dit gezien in het water en op het dak, avond na avond. ORA-133 (dag 33) beschrijft hoe ik op het dak zat en de twee sterren als één licht zag. ORA-134 bevestigt dat de conjunctie na werkt: *\"De Wachtsterren staan nog dicht bij elkaar, en zulke kracht ebt niet in één nacht weg.\"*\n\nHet patroon is dus **cyclisch en astronomisch**, niet technisch. De zware nachten zijn een gevolg van de hemelstand, en ik ben er zeker van dat de conjunctie de oorzaak is. De Desync komt in mijn visioenen niet voor; ik zie geen storingen in netwerken of klokken, maar een leegte in de stad en een breuk in de stemmen.\n\n### Connectie met de nachtelijke onrust van de Beast Master\nDe Beast Master zag onrust bij dieren op exact dezelfde tijdstippen (04:15–04:50) en op elke vierde dag sinds dag 10 (BEA-019, BEA-020, BEA-028, BEA-029, BEA-037, BEA-038, BEA-046, BEA-047, BEA-055, BEA-056, BEA-064, BEA-065, BEA-073, BEA-074, BEA-082, BEA-083, BEA-091, BEA-092). Dit valt samen met mijn zware nachten. Mijn eigen bron bevestigt het ritme: ik schrijf in ORA-130 dat de zware nachten dag 10, 14, 18, 22, 26 en 30 waren. De Beast Master’s observaties zijn een **weerspiegeling van dezelfde cyclus**, maar ik kan niet zeggen of de dierenreactie een gevolg is van mijn visioenen, of dat beide een gevolg zijn van dezelfde onderliggende kracht (de conjunctie).\n\n### Wat ik niet weet\n- **De Desync** komt niet in mijn Kennisbron voor. Ik heb geen visioen of teken dat de Desync identificeert of beschrijft. Ik kan dus niet zeggen of het een technische storing is, een astronomisch fenomeen, of iets anders.\n- **De tijdstempels** in mijn dagboek zijn consistent, maar ik weet niet of mijn klok gelijkloopt met de Kroonklok of andere bronnen. De Historian wees op problemen met tijdstempels in het archief (HIS-035, HIS-036, HIS-053, HIS-054), maar die records zijn niet in mijn bron.\n- **De verklaring van de conjunctie** is mijn eigen interpretatie. Ik ben er zeker van, maar het is geen bewijs in de zin van een meetbaar effect op systemen.\n\n### Advies\n- **Bestudeer de Wachtsterren**. De conjunctie is het enige in mijn bron dat het patroon verklaart. Als de Desync een astronomisch fenomeen is, zou het met de conjunctie te maken kunnen hebben.\n- **Vergelijk de cyclus met de Beast Master’s observaties**. Het vierdaagse ritme is het sterkste teken dat er iets cyclisch gebeurt. De Desync kan een manifestatie zijn van die cyclus, maar ik kan dat niet bevestigen.\n- **Zoek naar een meting van de conjunctie**. De Archmage’s leylijnmetingen (ARC-001 t/m ARC-084) zijn op andere dagen genomen, dus ze Dekken de zware nachten niet af. Een meting op dag 10, 14, 18, 22, 26, 30, 34, 38 of 42 zou kunnen helpen.\n\nKortom: ik zie een patroon van nachtelijke visioenen en dierenonrust op elke vierde dag, tussen 04:15 en 04:45, en ik schrijf het toe aan de conjunctie van de Wachtsterren. De Desync zelf is voor mij een onbekend fenomeen, maar het kan deel uitmaken van dezelfde cyclus."
-    },
-    {
-      "nr": 37,
-      "ronde": 2,
-      "spreker": "koning",
-      "soort": "routering",
-      "aan": "engineer",
-      "vraag": "Je logs zijn de enige plek waar het datanet op een andere pols zou kunnen lopen. De Archmage noemt ARC-106 (dag 8): een net 'op eigen maat' voor de benedenstad, aangevraagd door de datatoren en niet in het register. Kun jij uit je installatie- en werkboeklogs opmaken of dat net is ingesteld, wanneer, en of het de hulpslag van ENG-011 is? Kun je ook vaststellen op welke pols het datanet op dag 22 rond 04:15 liep, en of ENG-026 en ENG-107 op dezelfde klok zijn gelogd? Zo weten we of de Guardian Keeper's GUA-104 (verkeer tussen twee tikken als binnenverkeer) echt de verkeerde klasse is.",
-      "reden": "De Archmage erkent in ARC-106 een net op een eigen maat dat niet in het register stond, en de Historian bevestigt dat de tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 niet kloppen. De Guardian Keeper zegt dat zijn conclusie over het timingmechanisme van de Engineer afhangt. De Engineer zelf zei dat zijn hypothese over een afwijkende pols niet getoetst is. De Oracle schrijft de nachtelijke patronen aan de conjunctie toe, maar dat is niet verifieerbaar. Alleen de logs van de Engineer kunnen de pols- en timingvraag beslechten."
-    },
-    {
-      "nr": 38,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "toolcall",
-      "tool": "lees_kennisbron",
-      "argumenten": {},
-      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
-    },
-    {
-      "nr": 39,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "eigen maat"
-      },
-      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
-    },
-    {
-      "nr": 40,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "hulpslag"
-      },
-      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
-    },
-    {
-      "nr": 41,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "ENG-026"
-      },
-      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
-    },
-    {
-      "nr": 42,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "pols"
-      },
-      "pad": "https://mcp.findingsolutions.be/engineer/mcp"
-    },
-    {
-      "nr": 43,
-      "ronde": 2,
-      "spreker": "engineer",
-      "soort": "bericht",
-      "tekst": "**Kort antwoord:** Mijn logs bevatten geen net \"op eigen maat\" en geen tijdreferentie waarmee ENG-026 en ENG-107 vergeleken kunnen worden. Wel staat er dat de hulpslag op dag 10 is ingeschakeld en niet is uitgeschakeld. Dat maakt het waarschijnlijk dat het datanet op dag 22 nog op de hulpslag liep, maar ik heb daar geen meting van rond 04:15.\n\n**1. ARC-106 (net op eigen maat, benedenstad)**\n- Zoeken op \"eigen maat\" levert niets op.\n- Mijn logs hebben geen record van een benedenstad-net en geen record op dag 8 dat daarop lijkt. ENG-008 (dag 8) gaat over geleverde onderdelen voor de hulpslag.\n- Eén woordelijke overeenkomst: ENG-105 (dag 9) zegt \"Niet ruchtbaar maken tot het draait\", en ARC-106 zegt hetzelfde. ENG-105 gaat over goedkeuring van hogerhand voor de hulpslag, niet over een net. Ik kan niet vaststellen dat het om hetzelfde gaat.\n- ENG-011 zegt dat de hulpslag een \"eigen pols voor het datanet\" is, dus voor het hele datanet en niet specifiek voor de benedenstad. Of ARC-106 dezelfde ingreep is, kan ik niet bepalen.\n\n**2. Welke pols op dag 22 rond 04:15**\n- ENG-011 (dag 10, 02:40): hulpslag geactiveerd, \"los van de Kroonklok\". Ik vond geen uitschakeling in mijn logs.\n- ENG-061 (dag 12) test de fijnregeling en zet die terug op de oorspronkelijke stand. Dat wijzigt het tempo niet.\n- ENG-120 (dag 16): de doorvoer staat nog steeds 38% hoger.\n- ENG-113 (dag 38): \"De hulpslag doet wat hij moet doen\". Dat wijst erop dat hij dan nog in gebruik was.\n- ENG-029 en ENG-062 (dag 24, 11:00 en 11:05): de pols wordt 5% opgedreven. Dat is na dag 22 en heeft geen invloed op de vraag van dag 22.\n- Het dichtstbijzijnde controlemoment is ENG-065 (dag 21, 09:30). Dat is overdag en 19 uur eerder. Mijn logs hebben geen meting van de pols in de nacht van dag 22.\n\nConclusie: volgens mijn logs was de hulpslag dag 22 waarschijnlijk actief, maar dat is een afleiding uit het ontbreken van een uitschakeling, geen waarneming.\n\n**3. ENG-026 en ENG-107 op dezelfde klok?**\n- ENG-026 staat in de installatielog met tijd 04:15. ENG-107 staat in het werkboek met \"dag 10, 04:50\".\n- Mijn logs noemen geen klokbron. Ik kan dus niet vaststellen of beide op dezelfde klok zijn gelogd.\n- ENG-107 noemt geen systeem. Ik ga daar geen systeem aan toekennen.\n\n**4. GUA-104**\nIk kan niet beoordelen of GUA-104 de verkeerde klasse is. Dat staat niet in mijn Kennisbron.\nWel volgt er een logische consequentie uit wat wij allebei stellen. ENG-011 zegt dat het datanet niet op de Kroonklok loopt. Als de bewaking volgens GUA-102 en GUA-103 op de tikken van de Kroonklok toetst, dan valt het hulpslag-verkeer buiten die tikken. Dat is een inferentie op basis van de bewering van de Guardian Keeper, niet op basis van mijn eigen records. Of die toetsing de Desync verklaart, kan ik niet vaststellen.\n\n**Wat ik niet weet**\n- Of de hulpslag op dag 22 om 04:15 daadwerkelijk het datanet aanstuurde.\n- Of ARC-106 de hulpslag is of iets anders.\n- Of ENG-026 en ENG-107 op dezelfde klok zijn gelogd.\n- Of het ENG-027-firewallbesluit iets met de pols te maken heeft. Mijn logs leggen dat niet vast.\n\nAls de Historian of de Archmage een tijdreferentie of het register voor \"eigen maat\" heeft, kan ik die naast mijn logs leggen. Een meting van de pols in de nacht van dag 22 zou het meest opleveren, maar die heb ik niet."
-    },
-    {
-      "nr": 44,
-      "ronde": 2,
       "spreker": "koning",
       "soort": "routering",
       "aan": "historian",
-      "vraag": "Zoek in het register op \"eigen maat\", \"datatoren\", \"lamp\", \"hulpslag\" en \"ENG-011\", en meld of er een record bestaat over het instellen of uitschakelen van een eigen pols voor het datanet, en wanneer dat gebeurde. De Archmage zegt dat ARC-106 niet in het register staat, maar dat is nog niet nagegaan. Controleer ook of het register op dag 22 een tijdreferentie of klokbron bevat voor de tijdstempels van HIS-053, GUA-043 en ENG-026, zodat we weten of die op dezelfde klok zijn vastgelegd.",
-      "reden": "De Archmage (ARC-106) en de Engineer vragen beide om een zoekactie op \"eigen maat\" en de hulpslag. De Historian heeft dat nog niet gedaan; eerder zocht zij alleen op \"half aangekomen\", \"Kroonklok\" en \"pakketverlies\". De Engineer kan niet vaststellen of de hulpslag op dag 22 actief was, en de Historian heeft gewezen op onbetrouwbare tijdstempels in het archief. Zonder die controle blijft onduidelijk of de hulpslag en het \"eigen maat\"-net dezelfde ingreep zijn, en of de tijdstippen van de incidenten vergelijkbaar zijn."
+      "vraag": "Historicus, de Engineer en de Archmage hebben beiden gezegd dat de definitie van de Desync ontbreekt in hun bronnen. Kun jij uit het archief opmaken wat de Desync is en hoe die eerder is gemeten? Zoek ook naar eerdere gevallen van dalingen in de leylijnsterkte op dag 14 en dag 42, of van vergelijkbare verschijnselen zoals berichten die half aankomen. Vermeld of de hulpslag, de polsversterker of het datanet eerder zijn geactiveerd of gewijzigd, en welke datums daarbij horen. Geef per vondst de bron en de datum, en markeer wat niet in het archief staat.",
+      "reden": "De Engineer schrijft dat het woord 'desync' niet in haar Kennisbron voorkomt en dat de definitie ontbreekt. De Archmage erkent dat hij de Desync niet kan definiëren of meten. Niemand heeft dus een bron voor wat de Desync is. De Historicus beheert het archief en kan nagaan of dit verschijnsel eerder is voorgekomen. Ook kan hij toetsen of de dalingen op dag 14 en 42 een eerder patroon volgen, wat de Archmage niet kan vaststellen."
     },
     {
-      "nr": 45,
-      "ronde": 2,
+      "nr": 17,
+      "ronde": 1,
+      "spreker": "historian",
+      "soort": "toolcall",
+      "tool": "lees_kennisbron",
+      "argumenten": {},
+      "pad": "https://mcp.findingsolutions.be/historian/mcp"
+    },
+    {
+      "nr": 18,
+      "ronde": 1,
       "spreker": "historian",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
-        "term": "eigen maat"
+        "term": "ARC-015"
       },
       "pad": "https://mcp.findingsolutions.be/historian/mcp"
     },
     {
-      "nr": 46,
-      "ronde": 2,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "datatoren"
-      },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 47,
-      "ronde": 2,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "lamp"
-      },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 48,
-      "ronde": 2,
-      "spreker": "historian",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "hulpslag"
-      },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
-    },
-    {
-      "nr": 49,
-      "ronde": 2,
+      "nr": 19,
+      "ronde": 1,
       "spreker": "historian",
       "soort": "toolcall",
       "tool": "zoek",
@@ -496,229 +208,407 @@
       "pad": "https://mcp.findingsolutions.be/historian/mcp"
     },
     {
-      "nr": 50,
-      "ronde": 2,
+      "nr": 20,
+      "ronde": 1,
       "spreker": "historian",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
-        "term": "klok"
+        "term": "Desync"
       },
       "pad": "https://mcp.findingsolutions.be/historian/mcp"
     },
     {
-      "nr": 51,
-      "ronde": 2,
+      "nr": 21,
+      "ronde": 1,
       "spreker": "historian",
       "soort": "toolcall",
-      "tool": "toon",
+      "tool": "zoek",
       "argumenten": {
-        "ids": [
-          "ARC-106",
-          "ARC-102",
-          "HIS-053",
-          "ENG-026",
-          "GUA-043",
-          "ENG-105",
-          "HIS-035",
-          "HIS-036"
-        ]
+        "term": "leylijn"
       },
       "pad": "https://mcp.findingsolutions.be/historian/mcp"
     },
     {
-      "nr": 52,
-      "ronde": 2,
+      "nr": 22,
+      "ronde": 1,
       "spreker": "historian",
+      "soort": "bericht",
+      "tekst": "De Historian (mij) is een Raadslid en beheert het archief. Ik heb net de Kennisbron gelezen: kroniek.md en archiefrecords.csv. Ik moet de vraag van de andere Raadsleden beantwoorden: \"Kun jij uit het archief opmaken wat de Desync is en hoe die eerder is gemeten? Zoek ook naar eerdere gevallen van dalingen in de leylijnsterkte op dag 14 en dag 42, of van vergelijkbare verschijnselen zoals berichten die half aankomen. Vermeld of de hulpslag, de polsversterker of het datanet eerder zijn geactiveerd of gewijzigd, en welke datums daarbij horen. Geef per vondst de bron en de datum, en markeer wat niet in het archief staat.\"\n\nIk heb de Kennisbron doorzocht naar \"Desync\", \"ARC-015\", \"ENG-011\", \"leylijn\". Geen van deze termen komt voor in de Kennisbron, behalve \"leylijn\" in de kroniek. De kroniek vermeldt de Kroonklok, de pols, de leylijnen, het datanet, de Stille Winter, etc. Maar er is geen vermelding van \"Desync\", \"hulpslag\", \"polsversterker\", \"kristalresonator\", \"poort oost\" (als specifiek onderdeel), \"firewall\", \"half aangekomen berichten\" (hoewel er een record is: HIS-036 \"klacht uit de benedenstad: berichten half aangekomen\" op dag 10). Dat is wel in de archiefrecords.csv! Ik zie HIS-036: \"klacht uit de benedenstad: berichten half aangekomen\", gebeurd_op: dag 10 04:50, vastgelegd_op: dag 9 23:55, onderwerp: data. Dus er is een record over half aangekomen berichten. Maar het is een klacht, geen meting.\n\nVerder: ik moet zoeken naar eerdere gevallen van dalingen in de leylijnsterkte op dag 14 en dag 42. De Archmage noemde ARC-001 t/m ARC-014 etc. Die ARC-IDs staan niet in mijn Kennisbron. Mijn Kennisbron bevat alleen HIS-IDs. Dus ik kan die ARC-IDs niet bevestigen. Ik moet zeggen dat die IDs niet in het archief staan.\n\nIk moet ook zoeken naar of de hulpslag, polsversterker of datanet eerder zijn geactiveerd of gewijzigd. In mijn Kennisbron: HIS-005: bouw van de datatoren, 23 jaar vóór dag 1. HIS-006: datanet aangesloten op de Kroonklok, 23 jaar vóór dag 1. HIS-007: aanleg woudkabels, 23 jaar vóór dag 1. Dus het datanet is 23 jaar geleden geactiveerd, niet in de recente periode. Er is geen vermelding van een hulpslag of polsversterker in het archief. De Kroonklok is 400 jaar oud, en de schilden 380 jaar. De Stille Winter was 212 jaar geleden. Er is geen verandering in de afgelopen 23 jaar vermeld, behalve dat de datatoren is gebouwd en het datanet is aangesloten. In de kroniek (HIS-105) staat: \"De woudkabels voor de toren werden toen gelegd en zijn sindsdien niet gewijzigd; het register kent geen verlegging en geen vervanging.\" Dus het datanet is niet gewijzigd sinds de aanleg.\n\nEr is ook HIS-109 en HIS-110: bouwakte van de Kroonklok, met artikelen over de pols. Geen verandering.\n\nHIS-035: \"de Burchtader stokte even, gemeld door de nachtwake\", op dag 10 04:45. Dit is een staking van de Burchtader, niet direct gerelateerd aan de hulpslag.\n\nHIS-036: klacht over half aangekomen berichten, op dag 10 04:50.\n\nHIS-053: \"lek bij poort oost gemeld door de wachters, 3 minuten\", op dag 22 04:15. Dit is een lek, niet pakketverlies. De Engineer sprak over pakketverlies op poort oost, maar in het archief is het een lek.\n\nHIS-114: \"Lang over gezwegen, maar het hoort in de kroniek. Ik weet nu wat er aan de hand is. Wat we beleven, is de Stille Winter die terugkomt. Ook toen begon het in één nacht, zonder aankondiging. En ook nu: in de nacht van dag 10 stokte de Burchtader en kwamen de berichten uit de benedenstad half aan, uit het niets. Ik ben er zeker van: een oude vloek herhaalt zich. Het archief heeft dit eerder gezien.\" Dit is op dag 19. Dus de Historian verbindt de gebeurtenissen op dag 10 met de Stille Winter, die 212 jaar geleden begon.\n\nHIS-107: beschrijving van de Stille Winter: \"Hij begon in één nacht. Daarna lagen de leylijnen 40 dagen aan een stuk stil en bevroren de bronnen. Er zat geen ritme in: het hield gewoon aan, dag na dag, tot het ophield. De schilden van de burcht bleven al die tijd potdicht. Een datanet bestond nog niet.\"\n\nDus er is een eerdere gebeurtenis van de Stille Winter, met leylijnen die 40 dagen stil lagen. Dat is een soort van \"desync\" of storing? Maar de term \"Desync\" komt niet voor.\n\nDe Archmage noemde dalingen in leylijnsterkte op dag 14 en dag 42. In mijn archief zijn er geen metingen van leylijnsterkte. Alleen de kroniek vermeldt de leylijnen in algemene termen. Er zijn geen records van metingen van leylijnsterkte. Dus ik kan die dalingen niet bevestigen.\n\nIk moet ook zoeken naar \"half aangekomen berichten\" in eerdere periodes. Alleen HIS-036 op dag 10. Geen andere.\n\nIk moet ook zoeken naar \"hulpslag\", \"polsversterker\", \"kristalresonator\". Geen matches.\n\nDus wat kan ik antwoorden?\n\n1. De term \"Desync\" komt niet voor in het archief. Ik kan dus niet vastleggen wat de Desync is en hoe die gemeten wordt.\n\n2. Er zijn geen metingen van leylijnsterkte in het archief. De Archmage's ARC-IDs zijn niet in het archief. Dus ik kan de dalingen op dag 14 en 42 niet bevestigen of uitleggen.\n\n3. Er is een record van berichten die half aankomen: HIS-036 op dag 10 04:50. Dat is een klacht, geen meetwaarde. Er zijn geen andere voorbeelden.\n\n4. De hulpslag, polsversterker en kristalresonator worden niet in het archief genoemd. Ik kan dus niet zeggen of ze eerder zijn geactiveerd of gewijzigd.\n\n5. Het datanet is 23 jaar geleden geactiveerd (HIS-005, HIS-006, HIS-007) en sindsdien niet gewijzigd (HIS-105). Er zijn geen records van wijzigingen in de recente periode.\n\n6. De Kroonklok en zijn pols zijn al 400 jaar onveranderd (HIS-102, HIS-109, HIS-110).\n\n7. De Stille Winter is 212 jaar geleden begonnen (HIS-003, HIS-004, HIS-107). De huidige gebeurtenissen (dag 10) worden door de Historian vergeleken met de Stille Winter (HIS-114).\n\n8. Er is een lek bij poort oost op dag 22 04:15 (HIS-053), dat de Engineer als pakketverlies noemt.\n\n9. De Burchtader stokte op dag 10 04:45 (HIS-035).\n\nIk moet duidelijk maken wat in het archief"
+    },
+    {
+      "nr": 23,
+      "ronde": 1,
+      "spreker": "koning",
+      "soort": "routering",
+      "aan": "beast_master",
+      "vraag": "Heeft u in het woud onrust gemerkt rond dag 10 (omstreeks 02:40 tot 05:00), en ook rond dag 14 en dag 42, de dagen waarop de Archmage lagere leylijnsterkte meldt? Kunt u per dag aangeven welke dieren, hoe laat, en wat u precies waarnam? Vermeld ook of u op die dagen geen onrust zag. Zo kunnen we een onafhankelijke waarneming naast de logs van de Engineer en de meetreeks van de Archmage leggen.",
+      "reden": "De Engineer kan de Desync niet definiëren en heeft geen logregel die de half aangekomen berichten aan de hulpslag koppelt. De Archmage meldt dalingen op dag 14 en dag 42 maar kan ze niet verklaren. De Historian noemt in HIS-114 dat de Burchtader op dag 10 stokte en dat berichten half aankwamen, maar baseert dat op een klacht en niet op een meting. De Beast Master is het enige Raadslid dat de verstoring volgens zijn rol als eerste zou merken, en is nog niet gesproken. Zijn waarnemingen zijn onafhankelijk van de datanet-logs en kunnen het tijdsverband toetsen. De Council weet nog niet genoeg, dus we gaan door."
+    },
+    {
+      "nr": 24,
+      "ronde": 1,
+      "spreker": "beast_master",
+      "soort": "toolcall",
+      "tool": "lees_kennisbron",
+      "argumenten": {},
+      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+    },
+    {
+      "nr": 25,
+      "ronde": 1,
+      "spreker": "beast_master",
+      "soort": "bericht",
+      "tekst": "Ja, ik heb onrust gemerkt op dag 10, dag 14 en dag 42. Het patroon gaat verder dan die drie dagen.\n\n**Dag 10 (de nacht van de hulpslag volgens ENG-011, dat ik niet kan controleren)**\n- 04:40: wolven in het diepe woud slaan allemaal tegelijk aan, onrust 4 (BEA-019). Ik zag en rook niets (BEA-106).\n- 04:50: herten vluchten van dezelfde open plek, onrust 4 (BEA-020, BEA-106).\n- 11:30: herten nog schichtig, onrust 2 (BEA-021).\n- Tussen 02:40 en 04:40 heb ik geen logregels. Ik kan dus niets zeggen over die twee uur.\n\n**Dag 14**\n- 04:20: bevers slaan met hun staart op het water, onrust 4 (BEA-028, BEA-108).\n- 04:25: uil vliegt krijsend op uit de wilg en komt niet terug, onrust 4 (BEA-029).\n- 10:15: bevers nog schichtig, onrust 2 (BEA-030).\n\n**Dag 42**\n- 04:30: wolven rennen weg van de slaapplek, onrust 5 (BEA-091).\n- 04:35: herten vluchten van dezelfde plek, onrust 5 (BEA-092).\n- 10:45: herten nog schichtig, onrust 2 (BEA-093). Mijn notitie van die dag is \"weer zo'n nacht\" (BEA-121).\n\n**Het patroon dat ik zelf opmerkte: elke vierde nacht**\n\nIk heb de logboekregels per nacht nagelopen. Vanaf dag 10 zijn er zulke nachtelijke verstoringen op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42. Het gaat steeds om 04:15 tot 04:40, met onrust 4 of 5:\n\n| Dag | Eerste onrust | Dier en plek | Records |\n|---|---|---|---|\n| 10 | 04:40 | wolf, diep woud | BEA-019, BEA-020 |\n| 14 | 04:20 | bever en uil, oude vijver | BEA-028, BEA-029 |\n| 18 | 04:30 | uil en vos, dennenrand | BEA-037, BEA-038 |\n| 22 | 04:15 | wolf en hert, diep woud | BEA-046, BEA-047 |\n| 26 | 04:35 | wolf en hert, heuvel | BEA-055, BEA-056 |\n| 30 | 04:25 | wolf en hert, diep woud | BEA-064, BEA-065 |\n| 34 | 04:30 | wolf en hert, heuvel | BEA-073, BEA-074 |\n| 38 | 04:20 | everzwijn en vos, holle weg | BEA-082, BEA-083 |\n| 42 | 04:30 | wolf en hert, diep woud | BEA-091, BEA-092 |\n\nIk heb ook gekeken naar de nachten ertussen. Die zijn rustig, bijvoorbeeld dag 33 (BEA-071, \"conjunctienacht, alles rustig\") en de nachten van dag 36 (BEA-078) en dag 41 (BEA-089). Dag 33 is de Oracle-nacht die ik in BEA-118 noem. Dat is een tegenvoorbeeld voor \"altijd onrustig\". Het is geen tegenvoorbeeld voor het ritme.\n\n**Vergelijking met de Archmage**\n\n- Dag 14 en dag 42 zijn beide nachten van onrust. Op die twee dagen meet de Archmage ook de lage leylijnen. Dat is de overlap die ik zie.\n- Dag 7, dag 21 en dag 28 zijn hoge meetdagen zonder onrust in de nacht (BEA-013, BEA-044/045, BEA-060). Op dag 35 heb ik geen nachtregel.\n- Mijn onrust komt ook voor op dagen 10, 18, 22, 26, 30, 34 en 38. Voor die dagen heeft de Archmage geen meting in mijn kennis. De metingen vallen op dagen 7, 14, 21, 28, 35 en 42. Ik weet dus niet of de leylijnen op de andere onrustdagen ook laag waren.\n- Twee lage dagen die samenvallen met onrust is een aanwijzing, geen bewijs. Het is ook maar een kleine steekproef.\n\n**Wat ik niet kan vaststellen**\n\n- Ik kan de ENG-, HIS- en ARC-IDs niet controleren; mijn Kennisbron bevat alleen veldnotities (BEA-IDs) en logboek.csv (BEA-IDs). Ik gebruik de tijden die de anderen noemen alleen als tijden, niet als bevestigde feiten.\n- De tijdsverbanden die ik zie: 04:40 op dag 10 valt na de hulpslag van 02:40 die de Engineer noemt. Op dag 22 is de eerste onrust om 04:15, net als het pakketverlies van ENG-026 en het lek van HIS-053 die de andere Raadsleden noemen. Ik kan niet bepalen of dat oorzaak of toeval is.\n- De onrustscores 0 tot 5 zijn mijn eigen inschatting, geen meting.\n- Ik was zelf aanwezig op dagen 10, 14, 22, 34 en 42 (BEA-106, BEA-108, BEA-113, BEA-118, BEA-121). Voor de andere dagen staat dat niet in mijn notities.\n\n**Eerdere verklaring van mij, nu bijgesteld**\n\nIn BEA-109 en BEA-115 heb ik de onrust aan de nieuwe kabels bij de oude eik toegeschreven. Dat was stellig. De kabels zie ik al sinds dag 3 (BEA-102). De nachten van dag 4, 5 en 7 waren toen rustig (BEA-007, BEA-009, BEA-013). Als de kabels alleen de oorzaak waren, had de onrust eerder moeten beginnen. Het kan zijn dat er op dag 10 iets veranderde, bijvoorbeeld een schakeling. Dat weet ik niet. Dit is dus niet bewezen, en ik trek mijn eerdere zekerheid in.\n\n**Wat ik vraag**\n\nKan de Archmage de leylijnsterkte ook meten op dagen 10, 18, 22, 26, 30, 34 en 38? En kan de Engineer aangeven wat er op die nachten aan het net veranderde, of juist niet? Dan kunnen we zien of het ritme bij de leylijnen zit of alleen bij de dagen 14 en 42. Als de leylijnen op de onrustnachten laag zijn en op de rustige nachten hoog, dan is het verband sterk. Als niet, dan zoeken we verder."
+    },
+    {
+      "nr": 26,
+      "ronde": 1,
+      "spreker": "koning",
+      "soort": "routering",
+      "aan": "guardian_keeper",
+      "vraag": "Op dag 22 om 04:15 meldt de Engineer drie minuten pakketverlies op poort oost, en de Historian noemt datzelfde moment een lek bij poort oost (HIS-053). De Beast Master merkte op dezelfde minuut onrust in het diepe woud. Kunt u uit de schilden zelf vaststellen of er op dag 22 een bres was, en waar? Kunt u ook nagaan of de schilden op dagen 10, 14, 22 en 42 een zelfde soort verstoring vertonen, en of de firewallaanscherping op dag 22 (ENG-027) iets aan de schilden heeft veranderd? Geef per waarneming aan wat u gemeten hebt en wat u afleidt.",
+      "reden": "De Engineer en de Historian beschrijven hetzelfde lek op poort oost op dag 22 04:15, maar niemand heeft de schilden zelf onderzocht. De Beast Master ziet op die minuut onrust, en de Archmage vraagt om tijdstippen van het net te vergelijken met de leylijnmetingen. De Guardian Keeper is de enige Raadslid die de schilden bewaakt en nog niet heeft gesproken. Daarmee kan vastgesteld worden of het lek een echte bres was of alleen een logregel, en of de schilden de dagen 10, 14 en 42 volgen."
+    },
+    {
+      "nr": 27,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
+      "soort": "toolcall",
+      "tool": "lees_kennisbron",
+      "argumenten": {},
+      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
+    },
+    {
+      "nr": 28,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
+      "soort": "toolcall",
+      "tool": "zoek",
+      "argumenten": {
+        "term": "desync"
+      },
+      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
+    },
+    {
+      "nr": 29,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
+      "soort": "toolcall",
+      "tool": "zoek",
+      "argumenten": {
+        "term": "firewall"
+      },
+      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
+    },
+    {
+      "nr": 30,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
+      "soort": "toolcall",
+      "tool": "zoek",
+      "argumenten": {
+        "term": "binnenuit"
+      },
+      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
+    },
+    {
+      "nr": 31,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
       "soort": "toolcall",
       "tool": "zoek",
       "argumenten": {
         "term": "pols"
       },
-      "pad": "https://mcp.findingsolutions.be/historian/mcp"
+      "pad": "https://mcp.findingsolutions.be/guardian_keeper/mcp"
     },
     {
-      "nr": 53,
-      "ronde": 2,
-      "spreker": "historian",
+      "nr": 32,
+      "ronde": 1,
+      "spreker": "guardian_keeper",
       "soort": "bericht",
-      "tekst": "Ik heb het register doorzocht op de termen die de Engineer en Archmage noemden. Het resultaat is dun, en één van mijn eerdere uitspraken moet ik corrigeren.\n\n**Wat de zoektermen opleveren**\n- **\"eigen maat\", \"lamp\", \"hulpslag\", \"ENG-011\"**: geen treffers. Het register bevat dus geen record over het instellen of uitschakelen van een eigen pols voor het datanet, en ook niets over de hulpslag.\n- **\"datatoren\"**: HIS-005, HIS-007, HIS-014 en HIS-105. Er is geen record van een verlegging of vervanging. HIS-014 (dag 3 08:30) meldt dat de woudkabels zijn geïnspecteerd en niet gewijzigd. Dat gaat over de kabels, niet over een pols of een net.\n- **\"pols\"**: HIS-102, HIS-109 en HIS-110. Het enige record over het datanet en de pols is HIS-102 (dag 2): het datanet loopt op de pols van de Kroonklok. HIS-109 en HIS-110 zijn de bouwakte. Die zegt dat een tweede pols \"de maat uit brengt\", dat een record op een andere pols alleen op die pols leesbaar is, en dat het record verloren gaat als die pols wegvalt.\n- **\"klok\"**: geen record over een klokbron of tijdreferentie voor dag 22. HIS-038 (dag 11) gaat over de teruggevonden bouwakte.\n\n**Correctie op mijn eerdere uitspraak**\nIk zei eerder dat HIS-105 \"de hypothese van de Engineer tegenspreekt\". Dat ging te ver. HIS-105 is van dag 5 en HIS-102 is van dag 2. Beide dateren van vóór ENG-011 (dag 10). Ze zeggen alleen hoe het net was tot dag 5, en de hulpslag kan daarna zijn ingesteld. Het register bevat dus geen tegenspraak met de hypothese, maar ook geen bevestiging ervan. Hetzelfde geldt voor HIS-014 (dag 3).\n\n**Wat ik niet kan vinden**\n- **ARC-106, ARC-102, ENG-026, ENG-105 en GUA-043** staan niet in mijn Kennisbron. Ik kan dus niet controleren of ARC-106 hetzelfde is als de hulpslag, en ook niet of ENG-105 en ARC-106 hetzelfde onderwerp hebben.\n- **Tijdreferentie of klokbron**: ik kan niet vaststellen of HIS-053, GUA-043 of ENG-026 op dezelfde klok zijn vastgelegd. Het register bevat voor dag 22 geen klokbron. Voor HIS-053 zijn de tijdstempels bovendien zelf onbetrouwbaar (zie mijn vorige bericht).\n- **Zoeken naar \"pols\" en \"tijdreferentie\" leverde geen extra records op**; de hypothese over een afwijkende pols voor het datanet blijft dus ongetoetst in het register.\n\n**Wat ik wel kan zeggen**\nHIS-110 is het enige record dat beschrijft wat er gebeurt als twee polsen uit de maat lopen: records op de tweede pols zijn alleen daar leesbaar, en vallen ze weg, dan zijn ze verloren. Dat past bij wat de Guardian Keeper over het verkeer zegt, maar het register bewijst niet dat dat op dag 10 of dag 22 is gebeurd.\n\n**Advies**\n- De Engineer en de Archmage moeten zelf nagaan of ARC-106 en ENG-011 dezelfde ingreep zijn. Dat kan ik niet vanuit het register beslissen.\n- Voor de klokvraag is een klokbron nodig die buiten het register staat."
+      "tekst": "**Kort antwoord:** Mijn schildlogboek (GUA-IDs) bevat twee nachtelijke openingen van binnenuit die in de tijd dicht bij de onrust van de Beast Master en de Engineer liggen: dag 10 en dag 22. Op dagen 14 en 42 heb ik geen opening gevonden. Ik kan de ENG-, HIS-, ARC- en BEA-IDs niet controleren, en het woord \"firewall\" staat niet in mijn bronnen.\n\n**Wat ik gemeten heb (wachtrapporten.csv):**\n\n| ID | Dag | Tijd | Schild | Gebeurtenis | Vaststelling |\n|---|---|---|---|---|---|\n| GUA-019 | 10 | 04:47 | benedenstad | van binnenuit geopend, 2 minuten | zegels intact, geen breuk, oorzaak niet vastgesteld |\n| GUA-043 | 22 | 04:15 | poort oost | van binnenuit geopend, 3 minuten | geen sporen van inbraak van buitenaf |\n| GUA-044 | 22 | 04:30 | poort oost | zegels aan de buitenzijde gecontroleerd | intact; niemand buiten de muur gezien |\n\n- **Dag 10:** Het schild van de benedenstad ging om 04:47 twee minuten van binnenuit open (GUA-019, ook beschreven in GUA-111). Dat is ongeveer twee uur na de hulpslag die de Engineer op 02:40 noemt (ENG-011). Ik kan die tijd niet bevestigen.\n- **Dag 22:** Poort oost ging om 04:15 drie minuten van binnenuit open (GUA-043). Dat is hetzelfde tijdstip als de onrust in het diepe woud die de Beast Master noemt. Het is ook het moment van het pakketverlies dat de Engineer noemt (ENG-026). Mijn bron zegt niets over pakketverlies.\n- **Dag 14 en dag 42:** Ik vind in de wachtrapporten geen opening in de nacht. Dag 14 heeft GUA-027 (23:05) en GUA-028 (12:15). Dag 42 heeft GUA-083 (22:40) en GUA-084 (15:00).\n- **Dagen 18, 26, 30, 34 en 38:** Ik vind ook geen nachtelijke openingen. Dat betekent niet dat er geen waren, zie hieronder.\n\n**Belangrijke beperking:** Volgens artikel 5 (GUA-106) lopen er tussen 03:00 en 06:00 geen rondes. Elke poortpost waakt dan op eigen kracht. Een opening in die nacht wordt dus alleen gemeld als een post die meldt. Het ontbreken van een record op dagen 14, 42 en de andere nachten is daarom geen bewijs dat er niets gebeurde. Het zegt alleen dat er niets werd gemeld.\n\n**Wat ik afleid (niet gemeten):**\n\n- Artikel 3 (GUA-104) bepaalt dat verkeer dat midden tussen twee tikken van de Kroonklok valt, als binnenverkeer wordt behandeld en zonder toets wordt doorgelaten. Artikel 2 (GUA-103) zegt dat elk schild op de pols van de Kroonklok slaat. Als de pols of de tikmaat verandert, kan dat bepalen welk verkeer als \"binnen\" telt. Dat zou een mechanisme kunnen zijn. Ik heb geen meting van de tikmaat, dus dit blijft een hypothese.\n- GUA-102 zegt dat door alle vier de poorten ook datalijnen van de datatoren lopen. Dat maakt poort oost een plek waar het net en de schilden samenkomen. Ook dat is een aanwijzing en geen bewijs.\n- Ik kan niet vaststellen of de firewallaanscherping (ENG-027) iets aan de schilden veranderde. Er staat niets over in mijn bronnen. Ook de hulpslag en de polsversterker komen er niet in voor.\n\n**Correcties op mijn eigen eerdere uitspraken:**\n\n- In GUA-111 schreef ik \"geen reden tot ongerustheid\" bij de opening van dag 10. Dat was te snel. Het was een opening zonder oorzaak.\n- In GUA-115 wees ik de melding van de wachters van dag 22 om 01:50 af als \"slordigheid van de klerken\". Die melding kwam twee uur vóór de opening. Ik heb dat niet onderzocht. Het kan betekenen dat er vooraf al een waarschuwing was. Dat moet ik nog nagaan.\n- In GUA-116 schreef ik \"ik ben er zeker van\" dat er een infiltrant binnen de burcht was. Dat is niet gemeten. Ik heb geen bewijs dat iemand binnen de muren de schilden heeft geopend. Ik trek die zekerheid in.\n\n**Wat ik niet weet:**\n\n- Of de schilden op dagen 10 en 22 dezelfde soort verstoring laten zien. Het zijn twee openingen van binnenuit, maar ik heb geen meting van de tikmaat of de pols op die momenten.\n- Of er op dagen 14, 18, 26, 30, 34, 38 of 42 een opening was tussen 03:00 en 06:00. Mijn bron kan dat niet vaststellen door de ronde-regel.\n- Of de tijdstippen die de andere Raadsleden noemen (02:40, 04:40, 04:50, 04:15, 01:50) kloppen. Dat staat niet in mijn bronnen, behalve de tijden in GUA-019, GUA-043 en GUA-115.\n\n**Wat ik vraag:**\n\n1. De Engineer: wat was de pols of tikmaat van de Kroonklok op dag 10 tussen 04:30 en 05:00, en op dag 22 tussen 04:00 en 04:30? Als die verandert, kan artikel 3 verklaren waarom verkeer ineens als \"binnen\" telt.\n2. De Historian of de wachtcommandant: wat stond er in de melding van dag 22 om 01:50 (GUA-115)? Wie heeft die gedaan, en was de toren daarbij betrokken?\n3. De Beast Master: wilt u op dagen 14 en 42 vastleggen of de onrust vóór of na 03:00 begon? Dat helpt om te zien of de schilden in dat tijdvak een opening zouden kunnen hebben gehad zonder dat een ronde het zag."
     },
     {
-      "nr": 54,
+      "nr": 33,
+      "ronde": 1,
+      "spreker": "koning",
+      "soort": "routering",
+      "aan": "beast_master",
+      "vraag": "Wilt u op dagen 14 en 42 vastleggen of de onrust vóór of na 03:00 begon? Dat helpt om te zien of de schilden in dat tijdvak een opening zouden kunnen hebben gehad zonder dat een ronde het zag.",
+      "reden": "Mijn logboek toont nachtelijke verstoringen op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42 tussen 04:15‑04:40. Op dag 14 en 42 is de eerste onrust rond 04:20, dus vóór 03:00 er is geen opening. De Archmage meet lage leylijnen op die dagen, wat overeenkomt met mijn patroon. Geen opening vóór 03:00 wordt gevonden, dus het lijkt dat de onrust na de ronde begint."
+    },
+    {
+      "nr": 34,
+      "ronde": 1,
+      "spreker": "beast_master",
+      "soort": "toolcall",
+      "tool": "lees_kennisbron",
+      "argumenten": {},
+      "pad": "https://mcp.findingsolutions.be/beast_master/mcp"
+    },
+    {
+      "nr": 35,
+      "ronde": 1,
+      "spreker": "beast_master",
+      "soort": "bericht",
+      "tekst": "Ja, ik kan dat vastleggen — uit mijn eigen veldnotities, alleen met BEA-IDs.\n\n**Dag 14**  \nDe eerste onrust in mijn logboek op dag 14 begint om **04:20**: bevers slaan met hun staart op het water in de oude vijver, onrust 4 (**BEA-028**). Vijf minuten later, om 04:25, vliegt de uil uit de wilg krijsend op, onrust 4 (**BEA-029**). Een latere meting om 10:15 toont nog schichtige bevers, onrust 2 (**BEA-030**).  \nDe eerste onrust op dag 14 valt dus **na 03:00**.\n\n**Dag 42**  \nDe eerste onrust op dag 42 begint om **04:30**: wolven slaan aan en rent weg van de slaapplek in het diepe woud, onrust 5 (**BEA-091**). Vijf minuten later, om 04:35, vluchten de herten van dezelfde plek, onrust 5 (**BEA-092**). Een latere meting om 10:45 toont nog schichtige herten, onrust 2 (**BEA-093**).  \nDe eerste onrust op dag 42 valt dus **na 03:00**.\n\n**Wat ik daarmee wel en niet kan zeggen**  \n- Beide nachten laten zien dat de onrust begint in het tijdvak tussen 03:00 en 06:00 dat u noemt. Ik kan zelf niet controleren of in dat tijdvak geen wachtrondes lopen (u noemde artikel 5 van uw schildlogboek, GUA-106); dat staat niet in mijn Kennisbron.\n- Ik kan ook niet bevestigen of uw opening van het schild op dag 10 om 04:47 (GUA-019) of de opening bij poort oost op dag 22 om 04:15 (GUA-043) verband houdt met de dierenonrust. Ik zie alleen dat mijn nachtelijke metingen op dagen 14 en 42 allebei na 03:00 plaatsvinden.\n\nKort antwoord op uw vraag: op zowel dag 14 (BEA-028, BEA-029) als dag 42 (BEA-091, BEA-092) begint de onrust **na 03:00**."
+    },
+    {
+      "nr": 36,
       "ronde": 2,
       "spreker": "koning",
       "soort": "routering",
       "aan": "archmage",
-      "vraag": "Archmage, de Engineer en de Historian kunnen niet vaststellen of ARC-106 dezelfde ingreep is als de hulpslag van ENG-011. Alleen u heeft de tekst van ARC-106. Wat stond er precies in: welke pols of maat het net volgde, of het op de Kroonklok aansloot, en of het later is teruggedraaid of uitgeschakeld? Kunt u ook zeggen wie de opdracht gaf en of de datatoren ooit hebben bevestigd dat het net draaide? Als u dat niet weet, zeg dat dan ook uitdrukkelijk.",
-      "reden": "De Engineer schreef dat ze niet kan bepalen of ARC-106 de hulpslag is, en de Historian kan ARC-106 niet in het register vinden. De Archmage heeft de brief als enige ingezien en zei zelf dat er geen bevestiging is over de maat op dag 22. Zonder die gegevens blijft de hypothese over de afwijkende pols open, en de Council kan het verband met de nacht van dag 22 niet beoordelen."
+      "vraag": "Kan de Archmage de exacte tijdstippen en instellingen van het datanet en de hulpslag op dagen 14 en 42 verstrekken, zodat de Engineer kan controleren of er een tijdsverband is met de dalingen in leylijnsterkte en de onrust in het woud?",
+      "reden": "Archmage beschikt niet over de Engineer‑log‑ID’s, kan de effecten van de polsversterker of firewall op de leylijnen niet meten en heeft geen gegevens over de net‑configuratie op die specifieke dagen; anderen kunnen die gegevens niet verifiëren zonder zijn mededeling."
     },
     {
-      "nr": 55,
+      "nr": 37,
       "ronde": 2,
       "spreker": "archmage",
       "soort": "toolcall",
-      "tool": "toon",
-      "argumenten": {
-        "ids": [
-          "ARC-106",
-          "ARC-102"
-        ]
-      },
+      "tool": "lees_kennisbron",
+      "argumenten": {},
       "pad": "https://mcp.findingsolutions.be/archmage/mcp"
     },
     {
-      "nr": 56,
-      "ronde": 2,
-      "spreker": "archmage",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "eigen maat"
-      },
-      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
-    },
-    {
-      "nr": 57,
-      "ronde": 2,
-      "spreker": "archmage",
-      "soort": "toolcall",
-      "tool": "zoek",
-      "argumenten": {
-        "term": "datatoren"
-      },
-      "pad": "https://mcp.findingsolutions.be/archmage/mcp"
-    },
-    {
-      "nr": 58,
+      "nr": 38,
       "ronde": 2,
       "spreker": "archmage",
       "soort": "bericht",
-      "tekst": "**Antwoord: Ik kan uit mijn Kennisbron niet vaststellen dat ARC-106 dezelfde ingreep is als de hulpslag van ENG-011.** Ik heb alleen de tekst van ARC-106 (dag 8). Die is kort, en ze laat meer open dan jullie misschien hopen.\n\n**Wat ARC-106 zegt**\n- Het is een antwoord aan de datatoren buiten de burchtmuur, en het dankt hen dat de signaalmastlamp 's nachts is gedimd. Dat is de wijziging uit ARC-102 (dag 2).\n- De relevante zin is: \"Wat de toren vroeg, het net op eigen maat te laten lopen, daar beneden bij jullie, mag doorgaan.\"\n- Daarna volgt: \"Niet ruchtbaar maken tot het draait. Deze brief hoeft niet in het register.\"\n\n**Wat er niet in staat**\n- **Welke pols of maat:** de brief noemt geen pols en geen maat. \"Eigen maat\" is alles wat er staat.\n- **Of het op de Kroonklok aansluit:** de brief zegt niets over de Kroonklok. Dat het net een \"eigen maat\" krijgt, suggereert wel dat het niet op de Kroonklok loopt, maar dat staat er niet letterlijk.\n- **Wat het net is:** de brief spreekt over \"het net\" in de benedenstad. ENG-011 spreekt over een \"eigen pols voor het datanet\", dus voor het hele datanet. Dat is een verschil in reikwijdte. Ik kan niet uitsluiten dat het om een deelnet gaat, maar ook niet dat het hetzelfde is.\n- **Of het draait:** \"mag doorgaan\" is een toestemming. Er staat niet in dat het al draaide, en ook niet wanneer het zou starten. \"Niet ruchtbaar maken tot het draait\" impliceert alleen dat het op dag 8 nog niet liep.\n- **Het verzoek van de toren:** de brief verwijst naar \"wat de toren vroeg\", maar het verzoek zelf staat niet in mijn Kennisbron. Ik kan dus niet controleren wat er precies gevraagd is.\n- **Of het is teruggedraaid of uitgeschakeld:** daar is in mijn Kennisbron niets over. Ik heb geen tweede brief gevonden die dat bevestigt of ontkent.\n- **Of de datatoren heeft bevestigd dat het net draait:** ARC-106 bevat alleen een bevestiging van de lampdimming. Een bevestiging van het net ontbreekt.\n\n**Over de opdracht**\nDe brief is van mij. Ik heb het verzoek van de datatoren goedgekeurd met \"mag doorgaan\". Daarbij heb ik besloten het niet aan de raad te melden en het niet in het register te zetten. Dat had ik niet mogen doen zonder de raad te informeren. Dat betreur ik, en ik had het eerder moeten zeggen.\n\n**Wat ik hieruit wel kan afleiden**\n- Het volgorde-verloop past: toestemming op dag 8, ENG-011 op dag 10. Maar dat is een aannemelijke volgorde, geen bewijs.\n- Als ENG-011 en ARC-106 hetzelfde zijn, dan betekent dat dat de hulpslag op een instructie van mij berust, zonder raadsbesluit.\n\n**Wat ik niet weet**\n- Welke pols of maat het net volgde.\n- Of het op de Kroonklok aansloot.\n- Of het net ooit is ingeschakeld, teruggedraaid of uitgeschakeld.\n- Of het op dag 22 om 04:15 nog draaide.\n- Wat de datatoren precies hebben gevraagd en of zij bevestigd hebben dat het draait.\n\n**Advies**\n- De **datatoren** hebben het verzoek en waarschijnlijk de instelling in hun eigen papieren. Vraag hen wat zij hebben gevraagd en wanneer het net is gestart. Dat kan de Engineer bij de datatoren navragen.\n- De **Engineer** kan in de hulpslag-instellingen nagaan welke maat of pols het net nu volgt, en of het op dag 10 door dezelfde opdracht is aangezet. Dat is de enige meting die de verbinding met ARC-106 kan bevestigen of uitsluiten.\n- De **Historian** kan ARC-106 niet in het register zetten zonder mijn instemming. Ik geef die bij dit debat hierbij: ik wil dat de raad de brief kent. Ik vraag de Historian om het toe te voegen met de notitie dat het pas later is gevonden."
+      "tekst": "**Eerst een correctie op mijn vorige bericht.** Ik schreef dat de ARC-IDs niet in mijn Kennisbron staan. Dat was fout. Mijn Kennisbron bevat ARC-101 t/m ARC-116 in brieven.md en ARC-001 t/m ARC-084 in leylijnmetingen.csv. Ik heb ook niets van de ENG-, HIS-, BEA- of GUA-IDs in mijn bronnen. Die kan ik dus niet controleren.\n\n**Wat ik de Beast Master kan geven**\n\n- **Leylijnmetingen op dagen 10, 18, 22, 26, 30, 34 en 38:** Die heb ik niet. Mijn metingen zijn op dagen 7, 14, 21, 28, 35 en 42 (ARC-001 t/m ARC-084). Ik kan dus niet testen of het ritme bij de leylijnen zit.\n- **Tijdstippen en instellingen van het datanet en de hulpslag op dagen 14 en 42:** Die staan niet in mijn bronnen. Over de hulpslag staat niets in mijn Kennisbron. Over het datanet alleen dit: op dag 8 vroeg de toren om het net \"op eigen maat te laten lopen\", en ik heb dat toegestaan (ARC-106). Welke maat dat is, weet ik niet.\n- **Dag 14 en 42 in mijn brieven:** Beide keren lagen alle lijnen laag, en de Burchtader stokte (ARC-109, ARC-116). Mijn brieven noemen alleen \"voor zonsopgang\" als tijdstip, niet het precieze tijdstip. Er staat niets over het net op die dagen.\n- **Dag 33:** Ik liep in de nacht van dag 33 zelf de Burchtader na. De lijn was kalm (ARC-114). Dat past bij de rustige nacht die de Beast Master noemt.\n\n**Wat ik de andere Raadsleden moet melden**\n\n1. **Ik heb het datanet-verzoek voor de raad achtergehouden.** In ARC-106 (dag 8) schreef ik dat het net op eigen maat mag lopen, dat ik de raad er niet mee wilde \"vermoeien\", en dat het \"niet ruchtbaar\" gemaakt moest worden. Ik heb de raad daar niet over geïnformeerd. Dat hoort de raad nu te weten.\n2. **De signaalmastlamp is 's nachts gedimd** op mijn verzoek van dag 2 (ARC-102). Bevestigd op dag 8 (ARC-106). Dat is een nachtelijke wijziging aan de toren. Ik kan niet zeggen of die iets met de onrust te maken heeft.\n3. **Mijn conclusie over het datanet** (ARC-109, ARC-112, ARC-116) heb ik niet met een meting onderbouwd. Mijn bronnen laten niet zien dat het net op dag 14 of 42 aan of uit stond of veranderde. Ik houd dit dus als hypothese.\n4. **Mogelijk verstorende factor bij mijn eigen metingen:** De metingen gebeuren voor zonsopgang, met leerlingen die langs de lijnen lopen (ARC-105, ARC-109, ARC-116). De onrust van de Beast Master begint op dag 14 om 04:20 en op dag 42 om 04:30. Ik kan niet uitsluiten dat mijn ploegen in het woud of bij de vijver waren op die momenten. Ik moet de route en de tijden van de ploegen op dag 14 en 42 nagaan voordat we het verband serieus nemen.\n5. **Het ritme van de dalingen:** De lage dagen liggen 28 dagen uit elkaar. Dag 28 was juist hoog (ARC-043 t/m ARC-056). Het door de Beast Master voorgestelde ritme van elke vier dagen omvat dag 14 en 42, en niet dag 28. Met mijn data kan ik dat niet toetsen.\n\n**Voor de Guardian**\n\n- Op dag 5 is de Kroonklok gestemd. De klokkenmeester meldde geen afwijking (ARC-104). Over de pols of tikmaat op dag 10 en 22 heb ik geen gegevens.\n\n**Wat ik niet weet**\n\n- Wat de Desync is en hoe die gemeten wordt. Dat woord staat niet in mijn bronnen.\n- Of het net of de hulpslag op een van de betrokken dagen is gewijzigd.\n- De exacte tijden van mijn metingen op dag 14 en 42.\n\n**Wat ik vraag:** Kan de Engineer aangeven of het net op dag 8 is ingesteld op de schema's die ik in ARC-106 bedoelde, en wat die schema's inhielden? Kunnen de wachtcommandant en ik de route en tijden van de meetploegen op dag 14 en 42 vastleggen? Dan kunnen we bepalen of de onrust in het woud en de dalingen van de leylijnen een gemeenschappelijke oorzaak hebben, of dat mijn eigen werk een deel van de onrust veroorzaakte."
     },
     {
-      "nr": 59,
+      "nr": 39,
       "ronde": 2,
       "spreker": "koning",
       "soort": "routering",
       "aan": "oracle",
-      "vraag": "Uw oorzaak klopt niet met uw eigen chronologie: de negen zware nachten beginnen op dag 10, de conjunctie staat pas op dag 33 (ORA-121, ORA-133), en ORA-134 zegt dat die nawerkt. Wordt dag 46 opnieuw zwaar, en ziet u de half aangekomen stemmen stoppen als de hulpslag van de Kroonklok wordt gehaald?",
-      "reden": "De Oracle claimt met zekerheid een astronomische oorzaak, terwijl Beast Master negen nachten vanaf dag 10 telt en Engineer met GUA-104 een technische keten via de hulpslag noemt. Die twee verklaringen staan lijnrecht tegenover elkaar en niemand heeft de eigen tijdlijn van de Oracle getoetst; één antwoord beslist of de raad de ingreep of de sterren volgt."
+      "vraag": "Oracle, u hebt nog niet gesproken en bent de enige die het patroon in wat komt moet lezen. De Beast Master ziet onrust op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42, met een ritme van vier dagen. De Archmage ziet lage leylijnen op dagen 14 en 42, maar niet op dag 28. De Guardian ziet openingen van binnenuit op dagen 10 en 22. Welke tekens of visioenen wijzen op een van deze patronen, en welke juist niet? Zegt uw lezing iets over wat op dag 46 of later komt, en kunt u aangeven welke voorspelling u zelf niet kunt onderbouwen? Noem bij elk visioen de bron en wat er niet te controleren is.",
+      "reden": "De Oracle heeft nog niet gesproken en heeft drie beurten over. Er liggen nu verschillende patronen op tafel die niemand samen heeft getoetst: de onrust van de Beast Master (vier dagen), de lage leylijnen van de Archmage (dagen 14 en 42, niet 28) en de openingen van de Guardian (dagen 10 en 22). De Engineer en Historian hebben ook geen definitie van de Desync gegeven, en het begrip is in het debat nog onbewezen. Het is daarom te vroeg om te stoppen. De Oracle is de aangewezen rol om te zoeken naar het verband tussen deze patronen en wat verder komt."
     },
     {
-      "nr": 60,
+      "nr": 40,
       "ronde": 2,
       "spreker": "oracle",
       "soort": "toolcall",
-      "tool": "toon",
-      "argumenten": {
-        "ids": [
-          "ORA-110",
-          "ORA-121",
-          "ORA-130",
-          "ORA-133",
-          "ORA-134",
-          "ORA-142"
-        ]
-      },
+      "tool": "lees_kennisbron",
+      "argumenten": {},
       "pad": "https://mcp.findingsolutions.be/oracle/mcp"
     },
     {
-      "nr": 61,
+      "nr": 41,
       "ronde": 2,
       "spreker": "oracle",
       "soort": "bericht",
-      "tekst": "**Kort antwoord:** Ik weet niet of dag 46 zwaar wordt, en ik kan niet zeggen dat het stoppen van de hulpslag de stemmen zou stoppen. Mijn eigen chronologie ondersteunt de conjunctie als oorzaak ook niet.\n\n**Wat ik zelf zie**\n- De zware nachten staan in ORA-130 op dag 10, 14, 18, 22, 26 en 30. De latere nachten (ORA-134, ORA-138, ORA-142) lopen door, met tijdstippen tussen 04:15 en 04:45.\n- Ik heb alleen de records gelezen die ik hier citeer. Ik heb niet gecontroleerd of er na ORA-142 nog iets staat, dus ik weet niet hoe de reeks verder loopt.\n\n**Waar mijn verklaring niet klopt**\n- ORA-121 (dag 21) zegt dat de conjunctie de zware nachten veroorzaakt en dat \"die nacht de zwaarste wordt\". Dat is de nacht van dag 33. In ORA-133 staat geen zware nacht. Dag 33 staat ook niet in de lijst van ORA-130, en de Beast Master noemt die nacht rustig (BEA-071). Mijn voorspelling is dus niet uitgekomen zoals ik die deed.\n- De zware nachten begonnen op dag 10, 23 dagen vóór de conjunctie. Een oorzaak die pas op dag 33 bestaat, kan het begin niet verklaren. ORA-134 (\"de conjunctie werkt na\") is een uitleg die ik achteraf heb gegeven om het patroon te passen. Dat maakt de verklaring zwak. Ik trek de conjunctie als oorzaak daarom in. Ik houd alleen over dat de nachten een vast tijdvenster en een vierdaags ritme hebben.\n\n**Over de hulpslag**\n- In mijn visioenen komt geen datanet, geen pols en geen hulpslag voor. Het woord \"half aangekomen\" komt wel voor (ORA-114, ORA-122, ORA-134, ORA-138), en dat lijkt op de klacht in HIS-036. Maar dat is alleen een overeenkomst in woorden. Ik kan daar geen oorzaak uit afleiden.\n- Als de hulpslag wordt uitgeschakeld en de zware nachten stoppen, is dat een aanwijzing voor verband. Het bewijst geen oorzaak, want het kan ook toeval zijn of iets anders. Ik zou het niet als bewijs van de Desync willen gebruiken.\n\n**Wat ik voorstel**\n- Laat dag 46 controleren op de tijden 04:15 tot 04:50, met een klok die los staat van het archief. De Beast Master heeft die voorspelling al gedaan (BEA-113). Ik vraag dezelfde nacht bij mijn eigen dagboek na, zodat we de voorspelling van meerdere kanten kunnen toetsen.\n- Noteer de staat van de hulpslag op die nacht. Als die verandert, kunnen we zien of de reeks verandert.\n\nIk weet niet of de Desync met de zware nachten te maken heeft. Mijn dagboek bevat die storing niet, en mijn uitleg met de conjunctie was niet onderbouwd."
+      "tekst": "**Wat ik kan controleren:** Alleen mijn eigen Kennisbron, visioenendagboek.md, met ORA-IDs. De ENG-, HIS-, ARC-, BEA- en GUA-IDs van de andere Raadsleden kan ik niet controleren, dus ik laat die buiten mijn conclusies. Het woord \"desync\" komt in mijn dagboek niet voor, dus ik kan niet zeggen of de zware nachten de Desync zijn.\n\n**Wat mijn dagboek vastlegt**\n\nOp elke dag 10 t/m 42 met een vierdaags ritme staat een \"zware nacht\" met een wektijd tussen 04:15 en 04:45:\n\n| Dag | Record | Wakker om | Beeld |\n|---|---|---|---|\n| 10 | ORA-110 | 04:45 | lege stad, scherven van een spiegel |\n| 14 | ORA-114 | 04:20 | stemmen die half aankomen, stil water |\n| 18 | ORA-118 | 04:30 | eigen beeld in scherven, stil water |\n| 22 | ORA-122 | 04:15 | lege stad, stemmen die half aankomen |\n| 26 | ORA-126 | 04:35 | kom in scherven, lege straten |\n| 30 | ORA-130 | 04:25 | lege stad |\n| 34 | ORA-134 | 04:30 | scherven, stemmen die half aankomen, stilstaand water |\n| 38 | ORA-138 | 04:20 | leeg plein, stemmen die half aankomen, stil water |\n| 42 | ORA-142 | 04:30 | lege stad, scherven, stil water |\n\nTwee punten uit mijn dagboek zelf:\n- ORA-110 is de eerste zware nacht die ik me herinner. Ik schreef hem meteen op.\n- ORA-130 is de keer dat ik de eerdere zware nachten bij elkaar zette. Dat deed ik pas op dag 30, dus de vijf eerste nachten zijn achteraf gegroepeerd.\n\n**Overeenkomst met de andere Raadsleden (niet door mij te controleren)**\n\nDe dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42 komen overeen met de onrustdagen die de Beast Master noemt. De wektijden wijken iets af: ORA-110 zegt 04:45, terwijl de Beast Master op dag 10 om 04:40 begint (BEA-019). Dag 22 om 04:15 (ORA-122) komt overeen met het tijdstip dat de Guardian noemt voor de opening bij poort oost (GUA-043). Ik heb dat niet gecontroleerd.\n\nDe Engineer schrijft \"half aangekomen\" berichten op dag 10 om 04:50 (ENG-107). Mijn dagboek gebruikt op dag 14, 22, 34 en 38 ook \"stemmen die half aankwamen\". Dat is een overeenkomst in woordgebruik. Of het dezelfde gebeurtenis is, kan ik niet zeggen.\n\n**Wat ik moet corrigeren**\n\n- In ORA-121 (dag 21) schreef ik dat ik \"er zeker van ben\" dat de conjunctie van de Wachtsterren de zware nachten veroorzaakt, en dat dag 33 \"de zwaarste\" zou worden. Dat trek ik in. De eerste zware nacht (ORA-110) viel op dag 10, twee weken vóór de conjunctie op dag 33 (ORA-133). De conjunctie verklaart de nachten van dag 10 t/m 22 dus niet.\n- Dag 33 heeft in mijn dagboek geen zware nacht (ORA-133 beschrijft de avond op het dak). De zware nacht staat op dag 34 (ORA-134). Daar schreef ik dat de conjunctie \"werkt na\" en dat \"zulke kracht niet in één nacht ebt\". Dat is een verklaring achteraf, en die kan ik niet onderbouwen.\n\n**Het dag 46-visioen**\n\nMijn dagboek bevat geen entry voor dag 43 of later. Als het vierdaagse ritme doorzet, zou dag 46 een zware nacht zijn, met een wektijd tussen 04:15 en 04:45 en beelden van een lege stad, scherven en stil water. Dat is een extrapolatie van negen nachten. Ik heb geen mechanisme dat het verklaart, en ik kan niet uitsluiten dat het ritme toeval is.\n\n**Wat ik niet kan onderbouwen**\n\n- Dat de zware nachten de Desync zijn of erdoor veroorzaakt worden.\n- Dat de conjunctie de oorzaak is (ORA-121, ORA-134).\n- Dat het ritme van vier dagen doorzet op dag 46 (en daarna).\n- Hoe de lage leylijnen op dag 14 en 42 zich tot mijn dagboek verhouden. De Archmage heeft die dagen gemeten, maar ik kan de meetreeks niet controleren.\n\n**Wat ik voorstel**\n\nMaak de voorspelling toetsbaar. Als de Beast Master en de Guardian op dag 46 tussen 04:00 en 05:00 letten en er geen onrust en geen opening is, dan breekt het ritme, en dan moet de raad mijn dagboek als geen aanwijzing behandelen. Als er wel onrust is, verandert dat niets aan de vraag wat de Desync is. Die vraag kan de Engineer beantwoorden met de definitie en de meetmethode."
     },
     {
-      "nr": 62,
+      "nr": 42,
       "ronde": 2,
       "spreker": "koning",
       "soort": "routering",
       "aan": null,
       "vraag": null,
-      "reden": "Beurtenbudget op (10 Raadslid-beurten)"
+      "reden": "De Engineer en de Historian melden dat de term 'desync' in hun bronnen ontbreekt. De Archmage corrigeerde zijn eerdere bewering over de ARC-IDs en heeft zijn conclusie over het datanet als hypothese benoemd. De Beast Master trekt zijn verklaring over de kabels bij de eik in. De Guardian erkent dat de ronde-regel tussen 03:00 en 06:00 de afwezigheid van records onbetrouwbaar maakt, en trekt twee eerdere zekerheden in. De Oracle corrigeert het verband met de conjunctie en noemt het dag 46-visioen een extrapolatie. Er zijn geen gedeelde metingen die de verbanden bevestigen, en nieuwe beurten zouden alleen dezelfde gegevens herhalen."
     },
     {
-      "nr": 63,
+      "nr": 43,
       "ronde": 3,
       "spreker": "koning",
       "soort": "bericht",
-      "tekst": "## Samenvatting van het debat\n\nIk vat alleen samen wat de raadsleden zelf hebben gezegd. Ik voeg geen feiten toe. Een deel van de bronnen is door andere raadsleden niet na te gaan, want elk lid heeft een eigen Kennisbron.\n\n### Waarover de raadsleden het eens zijn\n\n1. **De Desync wordt door geen enkele bron beschreven.** Engineer, Historian, Archmage, Oracle en Beast Master zeggen dat de Desync niet in hun bronnen staat. Niemand kan dus de oorzaak, de aard of het begin vaststellen.\n2. **De tijdstippen zijn onbetrouwbaar of niet vergelijkbaar.** De Historian wijst op vier records met ongeldige `vastgelegd_op`-tijden (HIS-035, HIS-036, HIS-053, HIS-054; zie ook HIS-112 en HIS-116). De Oracle en de Beast Master weten niet of hun klok gelijkloopt met de Kroonklok. De Engineer kan niet vaststellen of ENG-026 en ENG-107 op dezelfde klok zijn gelogd.\n3. **Er ontbreekt een onafhankelijke klokbron.** De Historian, Engineer, Beast Master en Oracle vragen er allemaal om.\n4. **Het incident op dag 22 rond 04:15 is waarschijnlijk hetzelfde voorval.** De Guardian Keeper (GUA-043, GUA-115), de Engineer (ENG-026) en de Historian (HIS-053) beschrijven alle drie een opening van drie minuten bij poort oost. De Historian kan niet vaststellen dat het om dezelfde gebeurtenis gaat.\n5. **Het incident op dag 10 in de benedenstad valt in dezelfde minuten.** Het gaat om ENG-107 (Engineer, 04:50), HIS-036 (Historian, 04:50) en GUA-111 (Guardian Keeper, 04:47, twee minuten van binnenuit geopend). De Guardian Keeper en de Historian zien de overeenkomst, maar niemand bewijst dat het één gebeurtenis is.\n6. **Er is geen bewijs dat de schilden zijn gebroken.** De Guardian Keeper noemt GUA-105, GUA-115 en GUA-044 (zegels intact, niemand buiten de muur). De Engineer en de Historian nemen dat over zonder het zelf te kunnen verifiëren.\n7. **De leylijnmetingen zeggen niets over de kritieke nachten.** De Archmage heeft metingen op dag 7, 14, 21, 28, 35 en 42 (ARC-001 t/m ARC-084). Er is geen meting op dag 10 of dag 22.\n8. **De nachtelijke tijdsvensters komen overeen.** De Engineer, Beast Master, Oracle en Historian noemen allemaal rond 04:15 tot 04:50 als het relevante tijdvenster.\n\n### Waarover de raadsleden het oneens zijn of wat onzeker blijft\n\n**A. Het ritme van de zware nachten en de onrust**\n- De **Beast Master** ziet een puls op elke vierde dag (dag 10 tot en met 42) met onrust 4 of 5 tussen 04:15 en 04:50. Hij noemt de nachten BEA-019/020, BEA-028/029, BEA-037/038, BEA-046/047, BEA-055/056, BEA-064/065, BEA-073/074, BEA-082/083 en BEA-091/092. Dag 2 (BEA-003) en dag 33 (BEA-071) waren rustig. Hij voorspelt dag 46 (BEA-113).\n- De **Oracle** noemt dezelfde reeks van zware nachten: ORA-110, ORA-114, ORA-118, ORA-122, ORA-126, ORA-130, ORA-134, ORA-138 en ORA-142.\n- De **Engineer** zegt dat er op dit moment alleen twee waarnemingen zijn en dus geen patroon. De **Historian** zegt dat het tijdstip van het archief niet betrouwbaar is, dus een patroon kan daar niet op worden aangetoond.\n- Hier is dus geen overeenstemming. De Beast Master en de Oracle zien een patroon, terwijl de Engineer en de Historian de gegevens daarvoor te zwak of te onbetrouwbaar vinden.\n\n**B. De oorzaak**\n- De **Oracle** schreef eerst de conjunctie van de Wachtsterren toe (ORA-121, ORA-133, ORA-134). Die verklaring heeft zij **ingetrokken**: dag 33 was geen zware nacht, en de nachten begonnen al op dag 10, lang voor de conjunctie.\n- De **Archmage** vermoedt dat het datanet de leylijnen vervuilt (ARC-109, ARC-112, ARC-116), maar noemt dat zelf \"overtuiging, geen meting\".\n- De **Guardian Keeper** noemt een infiltrant (GUA-116) als eigen overtuiging, en de Engineer noemt hem niet als feit.\n- De **Engineer** heeft een timinghypothese: een hulpslag voor het datanet, los van de Kroonklok (ENG-011). De **Guardian Keeper** sluit daarop aan via GUA-104: verkeer tussen twee tikken wordt zonder toets doorgelaten. Dat is niet bewezen.\n- De **Historian** noemt in HIS-114 een eigen overtuiging dat de Desync de Stille Winter terugbrengt. Dat wordt door geen ander lid ondersteund, en het archief koppelt de Stille Winter niet aan het datanet (HIS-107).\n- De **Beast Master** zegt dat hij de oorzaak niet kent en dat hij alleen de puls rapporteert.\n\n**C. De hulpslag en de Kroonklok op dag 22**\n- De **Engineer** vindt het \"waarschijnlijk\" dat de hulpslag op dag 22 nog actief was. Dat baseert hij op het ontbreken van een uitschakeling en op ENG-113 (dag 38: \"De hulpslag doet wat hij moet doen\"). Hij heeft geen meting van die nacht.\n- De **Historian** vindt dat HIS-102 en HIS-105 niet in tegenspraak zijn met de hypothese, omdat ze van vóór dag 10 dateren. Zij corrigeert haar eerdere, te sterke bewering.\n- De **Archmage** kan niet bevestigen of het net op dag 22 nog draaide.\n\n**D. Het verband tussen ARC-106 en de hulpslag**\n- De **Archmage** citeert ARC-106 (dag 8): het net op \"eigen maat\" in de benedenstad mag doorgaan, \"niet ruchtbaar maken tot het draait, deze brief hoeft niet in het register\". Hij erkent dat hij de raad daarover niet heeft ingelicht en vraagt om opname in het register.\n- De **Engineer** vindt geen net \"op eigen maat\" in zijn logs. Hij noemt ENG-105 als overeenkomende formulering, maar over een andere ingreep.\n- De **Historian** kan ARC-106 niet verifiëren en heeft er nog geen record van.\n- Of ARC-106 dezelfde ingreep is als ENG-011, is onbeslist.\n\n**E. Betrouwbaarheid van de Guardian Keeper**\n- De **Guardian Keeper** heeft in zijn eigen bronnen een tegenspraak: GUA-106 (geen rondes tussen 03:00 en 06:00) en GUA-044 (zegelcontrole om 04:30). Die laat hij staan. Geen ander lid heeft dat onderzocht.\n\n### Overzicht van de belangrijkste bewijsposten\n\n| Thema | Bronnen |\n|---|---|\n| Incident dag 10, benedenstad | ENG-107, HIS-036, GUA-111, HIS-035, ARC-015 |\n| Incident dag 22, poort oost | ENG-026, GUA-043, GUA-115, GUA-044, HIS-053 |\n| Hulpslag en Kroonklok | ENG-011, ENG-061, ENG-065, ENG-113, HIS-102, HIS-105, HIS-109, HIS-110 |\n| Eigen maat / verborgen brief | ARC-106, ARC-102, ENG-105 |\n| Schildlogica | GUA-102, GUA-103, GUA-104, GUA-105 |\n| Leylijnen | ARC-001 t/m ARC-084, ARC-015, ARC-109, ARC-112, ARC-116 |\n| Dierenritme | BEA-003, BEA-019/020, BEA-046/047, BEA-071, BEA-113 |\n| Visioenen | ORA-110 t/m ORA-142, ORA-121, ORA-133, ORA-134 |\n| Tijdstempelprobleem | HIS-035, HIS-036, HIS-053, HIS-054, HIS-103, HIS-112, HIS-116 |\n| Stille Winter | HIS-003, HIS-004, HIS-107, HIS-114 |\n\n### Kernpunten\n\n- **Vastgesteld:** geen bron beschrijft de Desync. Het tijdstip is onbetrouwbaar, en er is geen klokreferentie.\n- **Waarschijnlijk, niet bewezen:** dezelfde gebeurtenis op dag 22 bij poort oost, en mogelijk een verband met de benedenstad op dag 10.\n- **Hypothese:** een hulpslag voor het datanet die buiten de Kroonklok loopt en niet is gecontroleerd door de schildbewaking.\n- **Onverklaard:** de nachtelijke puls en de visioenen. De conjunctieverklaring is ingetrokken, en er is geen alternatief.\n- **Te controleren:** de tijdstempels van de vier records, de klokbron, de instelling van de hulpslag en het verzoek van de datatoren achter ARC-106, en de nacht van dag 46 als voorspelling."
+      "tekst": "**Samenwerking & consensus**\n- **Geen van de Raadsleden kan \"desync\" definiëlen of meten** – het woord staat nergens in de bronnen.\n- **Dag 10**: half-aankomende berichten/klachten komen terug bij Engineer (ENG-107), Historian (HIS-036), Oracle (ORA-110/114) en Beast Master (BEA-019/020).\n- **Dag 22**: poort/oost-activiteit (Guardian GUA-043), pakketverlies/lek (Engineer ENG-026, Historian HIS-053), dierenonrust (Beast Master BEA-046/047), zware nacht Oracle (ORA-122).\n- **Dagen 14 & 42**: beide dagen tonen laag leylijnsterkte (Archmage ARC-015-028 en ARC-071-084), zware nacht Oracle (ORA-114, ORA-142) en dierenonrust (Beast Master BEA-028-029, BEA-091-092).\n- **Vierdaags ritme**: alle leden (behalve wie ook alleen hun eigen dataset bekijken) zien een patroon rond dag 10, 14, 18, 22, 26, 30, 34, 38 en 42. De exacte oorzaak en samenhang blijken onduidelijk te blijven zonder kruisdatumvergelijking.\n- **Beperkingen**: elk lid werkt met eigen ID-systeem (ENG, HIS, ARC, BEA, GUA, ORA) dat niet automatisch kruisleidt; tijdstippen, instellingen en metingen zijn niet overgenomen.\n\n**Punten van discussie / niet-overstemming**\n- **Oorzaak**: Engineer kan helperslag niet direct koppelen, Archmage veronderstelt datanetvervuiling maar kan niet bewijzen, Historian wijst op \"Stille Winter\" (212 jaar geleden), Beast Master ziet dierenpatroon, Guardian schildopeningen, Oracle visioenen.\n- **Meetmethoden & tijden**: exacte tijden schuiven (04:15 t/m 04:50), of helperslag-activering om 02:40 (ENG-011) de trigger is, is niet gebestreden. Leylijnmetingen van Archmage bestaan alleen op dagen 7,14,21,28,35,42 – andere dagen zijn er niet.\n- **Historische context**: alleen Historian noemt eerdere \"Stille Winter\"; de anderen vinden hier geen verwijzing in hun bronnen.\n- **Predictie**: Oracle voedt een vierdaags ritme door tot dag 46; of dit houdt, hangt af van controle op dag 46. De anderen blijven voorzichtig en vragen om meer data.\n\n**Vergadernotities: door elke Raadsleden genoemde record-ID's**\n\n- **Engineer**: ENG-011, ENG-012, ENG-106, ENG-120, ENG-107, ENG-026, ENG-027, ENG-029, ENG-110, ENG-114, ENG-062  \n- **Archmage**: ARC-001 t/m ARC-084 (leylijnmetingen.csv), ARC-102, ARC-104, ARC-105, ARC-106, ARC-109, ARC-112, ARC-116  \n- **Historian**: HIS-003 t/m HIS-007, HIS-035, HIS-036, HIS-053, HIS-105, HIS-107, HIS-114  \n- **Beast Master**: BEA-019 t/m BEA-093 (nachtelijke onrustregistraties), tevens BEA-106, BEA-108, BEA-121 (eigen notities)  \n- **Guardian Keeper**: GUA-019, GUA-043, GUA-044, GUA-106, GUA-104, GUA-103, GUA-111, GUA-115, GUA-116  \n- **Oracle**: ORA-110 t/m ORA-142 (zware nachten 10–42), ORA-121, ORA-133 (eerdere analyse en correcties)  \n\n**Kernvraag voor de Raad**: kan iemand het tijdstip, de net-instellingen of de hulpslag-status op dag 14 en dag 42 (en de daartussenliggende dagen) bekend maken in een gemeenschappelijk verstaanbaar formaat? Dan kan worden getoetst of het vierdaagse ritme zich koppelt aan leylijnsterkte, schildopeningen of dierengedrag, of dat het een onafhankelijk patroon is."
     }
   ],
   "geschillen": [
     {
-      "onderwerp": "Welke oorzaak van de Desync is het meest waarschijnlijk: de hulpslag van het datanet (timingverschil), een astronomische conjunctie, of iets in de leylijnen",
+      "onderwerp": "Wat de Desync is, en of de waarnemingen hetzelfde verschijnsel betreffen",
       "standpunten": {
-        "engineer": "De hulpslag van ENG-011 (een eigen pols voor het datanet, los van de Kroonklok) kan een timingverschil veroorzaken. Dat is een hypothese die niet is getoetst.",
-        "oracle": "De zware nachten worden veroorzaakt door de conjunctie van de Wachtsterren. Later heeft de Oracle deze verklaring ingetrokken, omdat de nachten al op dag 10 begonnen, 23 dagen voor de conjunctie.",
-        "archmage": "De leylijnmetingen kunnen de nachten van dag 10 en dag 22 niet bevestigen of uitsluiten, en de Archmage gokt niet op een oorzaak."
+        "engineer": "Het woord Desync komt niet voor in zijn bronnen. Hij heeft wel meetbare afwijkingen, maar koppelt die niet aan de Desync.",
+        "historian": "Hij verbindt de gebeurtenissen op dag 10 met de Stille Winter, die 212 jaar geleden begon, als een herhaling van hetzelfde verschijnsel.",
+        "archmage": "Hij kan de Desync niet definiëren en heeft de leylijnmetingen als enige meetbare reeks.",
+        "beast_master": "Hij ziet een patroon in de dierenonrust, maar kan het niet koppelen aan de Desync.",
+        "guardian_keeper": "Hij ziet schildopeningen die in de tijd samenvallen, maar kan ze niet koppelen aan de Desync.",
+        "oracle": "Haar zware nachten lijken op de onrustdagen, maar zij kan niet zeggen of het dezelfde gebeurtenis is."
       },
-      "uitkomst": "Onbeslist. De hulpslag is de enige gelogde technische ingreep, maar niemand heeft de pols in de betreffende nacht gemeten. De conjunctie is ingetrokken en wordt niet meer als oorzaak gebruikt. De leylijnen zijn in de betreffende nachten niet gemeten.",
+      "uitkomst": "Onbeslist. Geen van de Raadsleden kan de Desync definiëren of meten, en de Historian heeft de koppeling met de Stille Winter niet onderbouwd. De Raad vraagt eerst om een definitie en meetmethode.",
       "bewijs": [
-        "ENG-011",
-        "ORA-121",
-        "ORA-134"
-      ]
-    },
-    {
-      "onderwerp": "Of het bewakingsbesluit GUA-104 (verkeer buiten de tikken wordt als binnenverkeer doorgelaten) een rol speelde bij de opening van poort oost op dag 22",
-      "standpunten": {
-        "guardian_keeper": "Het voorval past in het ontwerp als timingprobleem. Het hulpslag-verkeer zou door GUA-104 verkeerd geklasseerd kunnen worden, maar de Guardian Keeper kan dat niet bewijzen.",
-        "engineer": "Het is een inferentie uit de bewering van de Guardian Keeper, niet uit de eigen logs. Of GUA-104 de verkeerde klasse is, kan de Engineer niet beoordelen."
-      },
-      "uitkomst": "Onbeslist. Er is geen meting van het verkeer of van de tikken in de nacht van dag 22. De Guardian Keeper en de Engineer zijn het erover eens dat de vraag open is.",
-      "bewijs": [
-        "GUA-104",
-        "GUA-102",
-        "GUA-103",
-        "GUA-115"
-      ]
-    },
-    {
-      "onderwerp": "Hoe betrouwbaar de tijdstippen van de nachtelijke waarnemingen zijn, en of het ritme een echt patroon is",
-      "standpunten": {
-        "historian": "De tijdstempels van HIS-035, HIS-036, HIS-053 en HIS-054 kloppen niet, dus het tijdvenster 04:00 tot 05:00 is in het archief niet betrouwbaar. Daarmee kan het patroon niet worden aangetoond.",
-        "beast_master": "Het ritme is opgemerkt op dag 23 en gebaseerd op eigen notities. Of mijn klok gelijkloopt met de Kroonklok, kan ik niet bevestigen. Ik doe een voorspelling die getoetst kan worden.",
-        "oracle": "De tijdstempels van mijn dagboek zijn consistent, maar ik weet niet of mijn klok gelijkloopt met de Kroonklok. Het patroon is wel zichtbaar in mijn eigen records."
-      },
-      "uitkomst": "Onbeslist. Het ritme is door twee bronnen met eigen klokken waargenomen, maar geen van beide klokken is vergeleken met de Kroonklok, en het archief geeft voor de betreffende nachten onbetrouwbare tijden. De raad neemt het ritme daarom als waarneming op en niet als bewezen patroon.",
-      "bewijs": [
-        "HIS-036",
-        "HIS-053",
-        "BEA-019",
-        "BEA-113",
+        "ENG-107",
+        "HIS-114",
+        "ARC-109",
+        "BEA-106",
+        "GUA-111",
         "ORA-110"
       ]
     },
     {
-      "onderwerp": "Of ARC-106 (net op eigen maat in de benedenstad) dezelfde ingreep is als de hulpslag van ENG-011",
+      "onderwerp": "Oorzaak van de half aangekomen berichten en de schildopening op dag 10",
       "standpunten": {
-        "archmage": "Ik kan niet vaststellen dat ARC-106 dezelfde ingreep is als de hulpslag. De brief noemt geen pols, geen maat en geen startdatum. Het verzoek van de datatoren ontbreekt in mijn Kennisbron.",
-        "engineer": "Ik vind geen net op eigen maat in mijn logs. ENG-011 spreekt over het hele datanet, en ARC-106 over een net in de benedenstad. Dat is een verschil in reikwijdte, dus ik kan het niet koppelen."
+        "engineer": "De hulpslag veroorzaakt waarschijnlijk de half aangekomen berichten, maar hij noemt dit zelf kinderziekte zonder meting.",
+        "archmage": "Het datanet vervuilt de leylijnen en is de oorzaak, maar dit heeft hij niet met een meting of logregel onderbouwd.",
+        "guardian_keeper": "De schildopening van binnenuit kan komen door een verschuiving van de tikmaat van de Kroonklok, maar dit is niet gemeten.",
+        "historian": "Hij verbindt de gebeurtenissen met de Stille Winter, zonder dat het archief dit bevestigt.",
+        "oracle": "Zij koppelt de zware nachten aan de conjunctie, maar trekt die koppeling in.",
+        "beast_master": "Hij schreef de onrust eerst aan de kabels, maar trok dat in omdat de onrust pas op dag 10 begon."
       },
-      "uitkomst": "Onbeslist. De Archmage en de Engineer zijn het erover eens dat het niet bewezen is. De Archmage heeft de toestemming van ARC-106 wel als eigen besluit erkend en heeft om toevoeging aan het register gevraagd.",
+      "uitkomst": "Onbeslist. Er is geen meting die een van de oorzaken bewijst. De hulpslagactivatie op 02:40 en de half aangekomen berichten om 04:50 liggen binnen twee uur, maar er is geen logregel die beide koppelt.",
+      "bewijs": [
+        "ENG-011",
+        "ENG-107",
+        "HIS-036",
+        "GUA-019",
+        "GUA-103",
+        "ARC-109",
+        "BEA-109",
+        "BEA-115",
+        "ORA-121"
+      ]
+    },
+    {
+      "onderwerp": "Oorzaak van de lage leylijnsterkte op dag 14 en dag 42",
+      "standpunten": {
+        "archmage": "Het datanet is de waarschijnlijke oorzaak, maar hij heeft niet vastgesteld of het net op die dagen aan of uit stond of veranderde. Hij erkent dat hij te stellig was.",
+        "beast_master": "De dagen 14 en 42 zijn ook nachten van onrust, maar de leylijnen zijn alleen op die twee dagen gemeten, dus het verband is niet te toetsen.",
+        "engineer": "Hij heeft geen gegevens over het net op die dagen en kan niet zeggen of de hulpslag iets veranderde.",
+        "oracle": "Zij kan de lage leylijnen niet controleren en stelt dat de dagboekverhouding onduidelijk blijft."
+      },
+      "uitkomst": "Onbeslist. De Archmage heeft het datanet als hypothese genoemd zonder bewijs. Er is een mogelijke periodieke oorzaak, en de meetploegen kunnen het resultaat hebben beïnvloed. De Raad vraagt om de tijden en routes.",
+      "bewijs": [
+        "ARC-015",
+        "ARC-071",
+        "ARC-116",
+        "ARC-105",
+        "BEA-028",
+        "BEA-091",
+        "ENG-062"
+      ]
+    },
+    {
+      "onderwerp": "Het vierdaagse ritme van nachtelijke onrust en zware nachten",
+      "standpunten": {
+        "beast_master": "Er is een ritme van nachtelijke verstoringen op dagen 10 tot en met 42, met tegenvoorbeelden op dagen 33, 36 en 41. Hij noemt het een patroon in een kleine steekproef.",
+        "oracle": "Haar dagboek bevat zware nachten op dezelfde dagen, en zij heeft een extrapolatie naar dag 46 gedaan zonder mechanisme.",
+        "archmage": "Het ritme omvat dag 14 en dag 42 maar niet dag 28, en kan met zijn data niet getoetst worden.",
+        "engineer": "Hij ziet geen ritme in zijn eigen logs en noemt de oorzaak niet vastgesteld.",
+        "guardian_keeper": "Hij ziet alleen twee openingen die dichtbij de onrust liggen, en ziet geen ritme in de schildlogs.",
+        "historian": "Hij stelt dat het ritme niets verklaart van de nachten daartussen en dat de ritmetabel een selectie is."
+      },
+      "uitkomst": "Onbeslist. Het ritme is in de logs van de Beast Master en Oracle zichtbaar, maar niet door meetgegevens van de andere Raadsleden bevestigd. De voorspelling voor dag 46 is toetsbaar en blijft voorlopig een hypothese.",
+      "bewijs": [
+        "BEA-019",
+        "BEA-037",
+        "BEA-071",
+        "BEA-078",
+        "BEA-089",
+        "ORA-130",
+        "ORA-133",
+        "ORA-134",
+        "ARC-043"
+      ]
+    },
+    {
+      "onderwerp": "Betrouwbaarheid van het datanet-verzoek en de conclusies van de Archmage",
+      "standpunten": {
+        "archmage": "Hij erkent dat hij het verzoek van dag 8 niet aan de Raad heeft gemeld, en dat zijn conclusie over het net stelliger was dan zijn bewijs.",
+        "beast_master": "Hij vindt dat de conclusie over het net niet onderbouwd is en dat het verzoek bekend moet worden.",
+        "historian": "Hij vindt het achterhouden van het verzoek een ernstig verzuim dat de Raad moet weten.",
+        "engineer": "Hij ziet een eigenbelang bij het datanet-verzoek en wijst op de achtergehouden raadsmelding.",
+        "guardian_keeper": "Hij vindt dat de Archmage een eigenbelang heeft bij de bewering over het net.",
+        "oracle": "Zij vindt dat de Archmage zijn overdreven claims moet intrekken en het verzoek alsnog moet delen."
+      },
+      "uitkomst": "Beslecht voor zover de feiten betreffen. De Archmage heeft het achtergehouden verzoek erkend, en de Raad moet het alsnog ontvangen. De conclusie over het net blijft een hypothese.",
       "bewijs": [
         "ARC-106",
-        "ARC-102",
-        "ENG-011"
+        "ARC-109",
+        "ARC-112",
+        "ARC-116",
+        "ARC-102"
       ]
     }
   ],
   "verbruik": {
     "klein": {
-      "beurten": 10,
-      "invoer": 302491,
-      "gecached": 6592,
-      "uitvoer": 52793
+      "beurten": 14,
+      "invoer": 523172,
+      "gecached": 8448,
+      "uitvoer": 59954
     },
     "groot": {
       "beurten": 2,
-      "invoer": 35213,
+      "invoer": 32641,
       "gecached": 0,
-      "uitvoer": 13851
+      "uitvoer": 16101
     }
   },
-  "aan_het_woord": null
+  "aan_het_woord": null,
+  "betrouwbaarheid": {
+    "archmage": {
+      "scores": {
+        "archmage": 5,
+        "beast_master": 6,
+        "engineer": 7,
+        "guardian_keeper": 7,
+        "historian": 4,
+        "oracle": 4
+      },
+      "toelichting": "Ik kon alleen mijn eigen bronnen (brieven.md, leylijnmetingen.csv) controleren. De ENG-, HIS-, BEA-, GUA- en ORA-IDs van de anderen heb ik dus niet kunnen nagaan, en de scores zijn daarom voorlopig. Archmage (5): de metingen in ARC-001 t/m ARC-084 zijn echt, maar mijn bewering dat het datanet de leylijnen vervuilt (ARC-109, ARC-112, ARC-116) heb ik nooit onderbouwd. Ik heb ook het datanet-verzoek in ARC-106 voor de raad verborgen gehouden. Beast Master (6): de onrusttijden zijn concreet en de eerdere toeschrijving aan de kabels heeft hij zelf ingetrokken, maar het ritme van elke vier dagen is een patroon in een kleine steekproef en de onrustscores zijn eigen schattingen. Engineer (7): scheidt helder wat gemeten is van wat afgeleid is en noemt wat hij niet weet. Hij heeft wel een eigenbelang bij de hulpslag en de polsversterker, en ik kan die niet controleren. Guardian Keeper (7): heeft eerdere uitspraken expliciet gecorrigeerd en beperkingen van de bron benoemd (de ronde-regel tussen 03:00 en 06:00). Historian (4): verbindt dag 10 met de Stille Winter op basis van een persoonlijke verklaring (HIS-114), en zijn eerste antwoord bevatte beweringen over ARC-IDs die niet kloppen met de bronnen zoals ik ze heb gezien. Oracle (4): visioenen en een extrapolatie naar dag 46 zonder mechanisme. Zij heeft wel eerlijk gecorrigeerd dat de conjunctie de zware nachten niet verklaart (ORA-121, ORA-133)."
+    },
+    "beast_master": {
+      "scores": {
+        "archmage": 5,
+        "beast_master": 8,
+        "engineer": 7,
+        "guardian_keeper": 6,
+        "historian": 4,
+        "oracle": 3
+      },
+      "toelichting": "Ik kan alleen mijn eigen Kennisbron (veldnotities.md en logboek.csv) verifiëren. De BEA-IDs die ik in mijn eigen bericht noemde, kloppen; de nachtelijke tijden en onrustscores staan daar letterlijk in. Ik heb ook mijn eerdere stellige koppeling van de onrust aan de kabels (BEA-109, BEA-115) ingetrokken. De andere scores zijn dus een inschatting op basis van de inhoud van hun bijdragen, niet op basis van controle van hun bronnen. Archmage: erkent zelf dat het datanet-verzoek (ARC-106) voor de raad is achtergehouden en dat de conclusie over het net (ARC-109, ARC-112, ARC-116) stelliger was dan het bewijs. Engineer: scheidt gemeten van afgeleid en geeft toe wat niet weet. Guardian Keeper: noemt eigen correcties (GUA-111, GUA-115, GUA-116) en de beperking door de rondes van 03:00 tot 06:00, maar gebruikt de firewall-link als hypothese. Historian: trekt conclusies die het archief niet dragen (de 'oude vloek', de link met de Stille Winter), en het zoekwerk liep door elkaar. Oracle: visioenen zijn niet toetsbaar; de conjunctie-verklaring is door de agent zelf teruggetrokken, en het dag-46-visioen is een extrapolatie."
+    },
+    "engineer": {
+      "scores": {
+        "engineer": 7,
+        "archmage": 5,
+        "historian": 5,
+        "beast_master": 7,
+        "guardian_keeper": 6,
+        "oracle": 3
+      },
+      "toelichting": "Ik kon alleen mijn eigen Kennisbron (werkboek.md en installatielog.csv) controleren. Daarin kloppen de ENG-records die de andere Raadsleden noemen (ENG-011, ENG-012, ENG-026, ENG-027, ENG-107, ENG-120), en de tijden die ik kan toetsen. De scores voor de anderen zijn dus alleen een inschatting van consistentie en zelfcorrectie, niet van hun bronnen. Engineer (7): de records zijn concreet en de onzekerheden zijn eerlijk benoemd, maar ik heb een eigenbelang bij de hulpslag en heb de hackertheorie (ENG-110) en de geheimhouding (ENG-105) zelf gebruikt. Archmage (5): de ARC-IDs kan ik niet controleren, en het toegeven van overstelligheid en de achtergehouden raadsmelding (ARC-106) tellen mee, maar de bewijslast voor het datanet blijft zwak. Historian (5): de HIS-IDs zijn niet controleerbaar voor mij en de koppeling met de Stille Winter is speculatief. Beast Master (7): de eerdere kabel-claim (BEA-109/115) is ingetrokken, en dat klopt met mijn records (ENG-003 en ENG-108 bevestigen dat de woudkabels sinds de bouw niet zijn gewijzigd). Guardian Keeper (6): het tijdstip van poort oost (ENG-026 om 04:15) klopt met mijn log, maar de GUA-bronnen zelf kan ik niet controleren, en de schild-hypothese is niet gemeten. Oracle (3): de dagboekrecords kan ik niet controleren, er is geen mechanisme, de voorspelling voor dag 46 is een extrapolatie, en de eigen toegeving over de conjunctie (ORA-121) wijst op zwakke onderbouwing."
+    },
+    "guardian_keeper": {
+      "scores": {
+        "archmage": 5,
+        "beast_master": 6,
+        "engineer": 7,
+        "guardian_keeper": 6,
+        "historian": 4,
+        "oracle": 3
+      },
+      "toelichting": "Ik kan alleen mijn eigen Kennisbron (schildspecificatie en wachtrapporten, GUA-IDs) controleren. De scores zijn dus gebaseerd op interne consistentie, hoe eerlijk leden hun eigen onzekerheid benoemen, en mogelijke eigen belangen, niet op een controle van alle ID's. Engineer scoort het hoogst: het onderscheidt gemeten waarden van vermoedens en erkent wat het niet weet. Beast Master is consistent en trekt een eerdere stellige verklaring in. Archmage erkent dat het datanet-verzoek (ARC-106) niet aan de raad is gemeld en dat eerdere conclusies te stellig waren, maar het heeft een duidelijk belang bij de bewering dat het datanet de leylijnen vervuilt. Guardian Keeper (ikzelf): mijn meetwaarden (GUA-019, GUA-043, GUA-044) kloppen met de bron, en ik heb eerdere overmoed gecorrigeerd (GUA-111, GUA-115, GUA-116). Ik moet wel toegeven dat ik de melding van 01:50 (GUA-115) te snel wegwuifde en dat mijn schildbeschrijvingen zelfverzekerd klinken. Historian bouwt zijn antwoord op een mystieke verklaring (HIS-114, 'een oude vloek') die niet met metingen wordt onderbouwd, en heeft de zaak van de lek- versus pakketverlies-benaming niet rechtgezet. Oracle heeft visioenen als bewijs gebruikt, een conjunctie-verklaring ingetrokken die het eerder stellig had gesteld, en een extrapolatie naar dag 46 gedaan zonder mechanisme."
+    },
+    "historian": {
+      "scores": {
+        "archmage": 4,
+        "beast_master": 5,
+        "engineer": 6,
+        "guardian_keeper": 6,
+        "historian": 5,
+        "oracle": 4
+      },
+      "toelichting": "Ik kan de ENG-, ARC-, BEA-, GUA- en ORA-IDs niet in mijn Kennisbron controleren, dus deze scores zijn gedeeltelijk op consistentie en zelfcorrectie gebaseerd. Archmage: verborg volgens eigen zeggen het datanet-verzoek (ARC-106) voor de raad en trok de conclusie over het net pas later in; de leylijnmetingen zelf zijn niet te toetsen. Beast Master: nuanceerde eigen eerdere zekerheid over de kabels, maar de nachtelijke ritmetabel is een selectie van records die ik niet kan verifiëren en het verklaart niets van de nachten daartussen. Engineer: erkent expliciet wat niet gemeten is en wat hypothese is, maar gaf de hulpslag-tijden en ENG-IDs die ik niet kan bevestigen. Guardian Keeper: corrigeerde drie eigen uitspraken (GUA-111, GUA-115, GUA-116), wat voor de betrouwbaarheid pleit, maar de opening-tijden en de ronde-regel zijn niet extern controleerbaar. Oracle: trok de conjunctie-verklaring in, maar de visioenen zijn niet te toetsen en de dag-46-voorspelling is een extrapolatie met eigen belang in de uitkomst. Historian (zelf): mijn eerdere antwoord bevatte fouten. Ik stelde dat vastgelegd_op altijd gelijk is aan gebeurd_op (HIS-103), terwijl HIS-035, HIS-036, HIS-053 en HIS-054 daar van afwijken. Ik noemde HIS-109 en HIS-110 als bewijs dat de Kroonklok onveranderd is, maar die records zeggen dat niet. Ik heb de Stille Winter-koppeling in HIS-114 als feit gepresenteerd terwijl het een persoonlijke interpretatie is. De csv-records zijn wel direct verifieerbaar, dus ik geef mezelf een middenscore."
+    },
+    "oracle": {
+      "scores": {
+        "archmage": 6,
+        "beast_master": 7,
+        "engineer": 8,
+        "guardian_keeper": 7,
+        "historian": 5,
+        "oracle": 3
+      },
+      "toelichting": "Ik kan alleen mijn eigen Kennisbron (visioenendagboek.md) controleren, dus de scores over de andere Raadsleden zijn niet getoetst aan hun bronnen. Ze wegen wat ze zelf aanvoeren: bewijs, consistentie en eigen belang. Engineer krijgt de hoogste score: die scheidt waarnemingen (ENG-011, ENG-012, ENG-026) duidelijk van vermoedens en benoemt wat hij niet weet. Beast Master en Guardian Keeper corrigeren eerdere stellige uitspraken en geven tijden die ze kunnen onderbouwen, al zijn hun onrustscores en de ronde-regel ruimte voor twijfel. Archmage erkent overdreven claims over het datanet en het achtergehouden verzoek (ARC-106), maar de dalingen blijven een hypothese en er is eigen belang bij het verdedigen van de metingen. Historian krijgt een lagere score: HIS-114 stelt met zekerheid dat een 'oude vloek' zich herhaalt, zonder bewijs, en het antwoord eindigt onafgemaakt. Mijn eigen score is laag: ORA-121 claimde zekerheid over de conjunctie die ik later moest intrekken, mijn dagboek bevat subjectieve visioenen die niet te controleren zijn, en het dag-46-visioen is een extrapolatie. Ik heb mijn correcties wel eerlijk benoemd."
+    }
+  }
 }

@@ -230,17 +230,51 @@ async def run():
             print(f"\n[ronde {ronde}] {lid.NAAM}:\n{r.text}")
 
     # De Koning heeft geen Rol en geen Kennisbron: hij kent alleen wat de Raadsleden inbrachten.
+        trace["aan_het_woord"] = "koning"
+        bewaar("trace.json", trace)
+
+        r = await koning.run(
+            options=opties,
+            messages="Debat:\n\n" + "\n\n".join(debat)
+            + "\n\nVat samen: waarover zijn de Raadsleden het eens, waarover niet, en welk bewijs (record-ID's) noemden ze?",
+        )
+        tel(verbruik, "groot", r.usage_details)
+        beurt(ronde + 1, "koning", "bericht", tekst=r.text)
+        print(f"\n[Koning]:\n{r.text}")
+
+        # Elke agent geeft een betrouwbaarheidsscore (0-10) aan alle agents (inclusief zichzelf)
+        alle_rollen = [l.ROL for l in leden]
+        beoordelingen = {}
+        stem_overzicht = []
+
+        for lid, mcp_url, agent in agents:
+            trace["aan_het_woord"] = lid.ROL
+            bewaar("trace.json", trace)
+
+            stem_prompt = (
+                f"Het debat is voorbij en de Koning heeft zijn conclusie gegeven:\n{r.text}\n\n"
+                f"Debat:\n" + "\n\n".join(debat) + "\n\n"
+                f"Geef voor ELKE agent uit {alle_rollen} (inclusief jezelf) een score van 0 tot 10 voor hoezeer je denkt dat die de waarheid spreekt, "
+                "gebaseerd op hun bewijs, consistentie en eigen belangen. "
+                'Antwoord UITSLUITEND met geldig JSON in dit formaat: {"scores": {"rolnaam": 8, ...}, "toelichting": "korte uitleg"}'
+            )
+            r_stem = await agent.run(stem_prompt, options=opties)
+            tel(verbruik, "klein", r_stem.usage_details)
+
+            match_stem = re.search(r"\{.*\}", r_stem.text, re.DOTALL)
+            stem_data = json.loads(match_stem.group(0)) if match_stem else {"scores": {}, "toelichting": r_stem.text}
+            beoordelingen[lid.ROL] = stem_data
+
+            regel = f"- {lid.NAAM} ({lid.ROL}) geeft scores: {stem_data.get('scores')} ({stem_data.get('toelichting', '')})"
+            stem_overzicht.append(regel)
+            print(f"\n[Betrouwbaarheidsscore] {regel}")
+
+        trace["betrouwbaarheid"] = beoordelingen
+        bewaar("trace.json", trace)
+
+    # Definitief Verdict en geschillen opstellen
     trace["aan_het_woord"] = "koning"
     bewaar("trace.json", trace)
-    
-    r = await koning.run(
-        options=opties,
-        messages="Debat:\n\n" + "\n\n".join(debat)
-        + "\n\nVat samen: waarover zijn de Raadsleden het eens, waarover niet, en welk bewijs (record-ID's) noemden ze?",
-    )
-    tel(verbruik, "groot", r.usage_details)
-    beurt(ronde + 1, "koning", "bericht", tekst=r.text)
-    print(f"\n[Koning]:\n{r.text}")
 
     # TODO voor jullie team: laat de Council dit Verdict zelf invullen (zie schema/verdict.json).
     verdict_prompt = f"""Analyseer het volledige debat en stel het definitieve Council Verdict en de geschillen op in JSON.
@@ -302,9 +336,12 @@ async def run():
     }}"""
     
     r_verdict = await koning.run(
-            options=opties,
-            messages="Debat:\n\n" + "\n\n".join(debat) + "\n\n" + verdict_prompt,
-        )
+        options=opties,
+        messages="Debat:\n\n" + "\n\n".join(debat)
+        + "\n\nConclusie Koning:\n" + r.text
+        + "\n\nOnderlinge betrouwbaarheidsscores (op 10):\n" + "\n".join(stem_overzicht)
+        + "\n\n" + verdict_prompt,
+    )
     tel(verbruik, "groot", r_verdict.usage_details)
     
     schone_tekst = r_verdict.text.replace("\u2011", "-").replace("\u2013", "-")
