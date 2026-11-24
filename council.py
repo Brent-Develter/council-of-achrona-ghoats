@@ -17,6 +17,8 @@ from agent_framework.openai import OpenAIChatCompletionClient
 from dotenv import load_dotenv
 from openai import AsyncOpenAI
 
+import re
+
 import raadsleden
 
 ROOT = Path(__file__).parent
@@ -25,7 +27,7 @@ ROLLEN = ("archmage", "engineer", "guardian_keeper", "historian", "oracle", "bea
 BEURTENBUDGET = 10  # spelregel: maximaal 10 Raadslid-beurten (berichten van Raadsleden) per run
 
 
-def kies_volgende(beurten, leden):
+async def kies_volgende(koning, beurten, leden):
     """De Koning leidt het debat: hij beslist wie spreekt. De kit roept deze functie op vóór elke beurt.
     (In AI-termen heet dit deel een orchestrator.)
 
@@ -52,12 +54,43 @@ def kies_volgende(beurten, leden):
       - een agent: de Koning als LLM die het debat leest en (rol, vraag, reden) teruggeeft.
         Meestal sneller gebouwd en slimmer dan regels: zie "Regels of een agent?" in de README.
     """
-    rondes = int(os.getenv("RONDES", "2"))
-    gesproken = sum(1 for b in beurten if b["soort"] == "bericht" and b["spreker"] in ROLLEN)
-    if gesproken >= rondes * len(leden):
-        return None, None, "vaste volgorde: alle rondes gespeeld"
-    lid = leden[gesproken % len(leden)]
-    return lid.ROL, "Geef je inbreng in hoogstens 150 woorden. Reageer op wat de anderen zeiden.", "vaste volgorde"
+    berichten = [b for b in beurten if b["soort"] == "bericht" and b["spreker"] in ROLLEN]#Alles dat op voorhand al is gezegd en door wie.
+    debat = "\n\n".join(f"{b['spreker']}: {b['tekst']}" for b in berichten) or "(nog niets gezegd)" #Zelfde als berichten maar mooi gezet voor de prompt.
+    gesproken = {b["spreker"] for b in berichten} #gesproken aangepast aangezien berichten al bestaat.
+    ledenlijst = "\n".join(f"- {l.ROL} ({l.NAAM}): {l.PERSPECTIEF}" for l in leden) #alle leden en de beschrijving van hun kennis maar mooi voor de prompt.
+    over = BEURTENBUDGET - len(berichten) #hoeveel rondes er nog over zijn.
+
+    #rondes = int(os.getenv("RONDES", "2"))
+    #if gesproken >= rondes * len(leden):
+    #    return None, None, "vaste volgorde: alle rondes gespeeld"
+    #lid = leden[gesproken % len(leden)]
+    #return lid.ROL, "Geef je inbreng in hoogstens 150 woorden. Reageer op wat de anderen zeiden.", "vaste volgorde"
+
+    prompt = (
+        "Je leidt nu het debat en kiest wie er als volgende spreekt. Antwoord ALLEEN met JSON, zonder uitleg of backticks.\n\n"
+        f"Raadsleden:\n{ledenlijst}\n\n"
+        f"Nog niet gesproken: {sorted(set(l.ROL for l in leden) - gesproken) or 'iedereen heeft gesproken'}\n"
+        f"Resterende beurten: {over}\n\n"
+        f"Debat tot nu toe:\n{debat}\n\n"
+        "Beslis:\n"
+        "- Wiens kennis ontbreekt nog? Wie wordt genoemd of beweert iets dat iemand anders kan controleren?\n"
+        "- Welke delen (ingreep, mechanisme, verloop) zijn nog onbekend of onbewezen?\n"
+        "- Weet de Council genoeg? Stop dan nu.\n\n"
+        'Geef {"rol": "<rol of null om te stoppen>", "vraag": "<gerichte vraag, max 150 woorden antwoord>", '
+        '"reden": "<concrete reden, verwijs naar wat er in het debat gezegd is>"}'
+    )
+    try:
+        r = await koning.run(prompt)
+        data = json.loads(re.search(r"\{.*\}", r.text, re.S).group(0))
+        rol = data.get("rol")
+        if rol is None:
+            return None, None, data.get("reden", "Koning stopt")
+        if rol not in {l.ROL for l in leden}:
+            raise ValueError(f"onbekende rol {rol!r}")
+        return rol, data["vraag"], data["reden"]
+    except Exception as e:
+        nog = [l for l in leden if l.ROL not in gesproken] or leden
+        return nog[0].ROL, "Geef je inbreng in hoogstens 150 woorden. Reageer op wat de anderen zeiden.", f"fallback (Koning-router faalde: {e})"
 
 
 def controleer(leden):
@@ -140,7 +173,10 @@ async def run():
         beurten.append({"nr": len(beurten) + 1, "ronde": ronde, "spreker": spreker, "soort": soort, **velden})
         bewaar("trace.json", trace)  # na elke beurt: de viewer (`uv run viewer`) toont het debat live
 
+    #hier worden alle modellen aangemaakt.
     klein = client("MODEL_KLEIN")
+    koning = Agent(client("MODEL_GROOT"), "Je bent de Koning van de Council of Achrona. Je hebt geen Kennisbron.", name="koning")
+
 
     async with AsyncExitStack() as stack:
         agents = []
@@ -170,7 +206,7 @@ async def run():
             if gesproken >= BEURTENBUDGET:
                 rol, vraag, reden = None, None, f"Beurtenbudget op ({BEURTENBUDGET} Raadslid-beurten)"
             else:
-                rol, vraag, reden = kies_volgende(beurten, leden)
+                rol, vraag, reden = await kies_volgende(koning, beurten, leden)
             if rol is not None and rol not in per_rol:
                 sys.exit(f"kies_volgende() koos {rol!r}, maar die Rol zit niet in raadsleden/.")
             if rol is not None:
@@ -196,7 +232,7 @@ async def run():
     # De Koning heeft geen Rol en geen Kennisbron: hij kent alleen wat de Raadsleden inbrachten.
     trace["aan_het_woord"] = "koning"
     bewaar("trace.json", trace)
-    koning = Agent(client("MODEL_GROOT"), "Je bent de Koning van de Council of Achrona. Je hebt geen Kennisbron.", name="koning")
+    
     r = await koning.run(
         options=opties,
         messages="Debat:\n\n" + "\n\n".join(debat)
