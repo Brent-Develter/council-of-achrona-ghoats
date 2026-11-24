@@ -1,0 +1,78 @@
+{
+  "run_id": "2026-11-24T14:09:47+01:00_4fd4dc6e",
+  "samenvatting": "De Raadsleden zijn het eens over een tijdpatroon: de zwaarste reacties in het logboek van de Beast Master en de visioenen van de Oracle vallen op dagen 10 + 4k (10, 14, 18, 22, 26, 30, 34, 38, 42). Dag 33 past niet in dit ritme. Een oorzaak is niet bewezen. De kabels bij de oude eik en de conjunctie van de Wachtsterren zijn beide hypothesen die tijdsamenloop niet kan bevestigen. Het debat eindigt daarom zonder vastgestelde ingreep of mechanisme.",
+  "oorzaak": {
+    "ingreep": {
+      "bewering": null,
+      "bewijs": [],
+      "zekerheid": 0.0
+    },
+    "mechanisme": {
+      "bewering": null,
+      "bewijs": [],
+      "zekerheid": 0.0
+    },
+    "verloop": {
+      "bewering": "De Desync toont een vierdaagse cyclus (dag 10 + 4k) in de zware nachten, zowel in de waarnemingen van de Beast Master (onrust 4 of 5 op dagen 10, 14, 18, 22, 26, 30, 34, 38 en 42) als in de visioenen van de Oracle (zware nachten op dezelfde dagen, elke keer wakker rond 04:15 tot 04:45). De eerste onrust bij de Beast Master was op dag 3 (kraai, nadat de mannen van de toren om 08:30 aankwamen) en op dag 9 (uil). Op dag 33 was de nacht rustig (BEA-071, ORA-133). De zware nacht die de Oracle voorspelde voor dag 33 kwam op dag 34 (ORA-134). De volgorde 'wolven eerst' is door de Beast Master teruggenomen: die geldt niet bij alle nachten.",
+      "bewijs": [
+        "BEA-019",
+        "BEA-020",
+        "BEA-028",
+        "BEA-037",
+        "BEA-082",
+        "BEA-091",
+        "ORA-110",
+        "ORA-142"
+      ],
+      "zekerheid": 0.6
+    }
+  },
+  "acties": [
+    {
+      "actie": "Verzamel de werkdata van de mannen van de toren bij de kabels en de oude eik, vanaf dag 3, per dag.",
+      "reden": "De Beast Master kan de kabels niet als oorzaak aanwijzen omdat er na dag 3 geen werkdata in het logboek staat (BEA-109 noemt geen datum). Zonder die data is het niet te toetsen of de zware nachten op werkdagen vielen."
+    },
+    {
+      "actie": "Leg de werkdata naast de cyclusdagen 10 + 4k en naast de rustige dagen, zoals dag 33.",
+      "reden": "Alleen zo kan worden vastgesteld of de kabels het ritme verklaren of dat het ritme onafhankelijk van het werk bestaat."
+    },
+    {
+      "actie": "Geef de Oracle toegang tot de BEA-records van de Beast Master, of laat de Beast Master de ORA-records vergelijken, zodat de dagen per record naast elkaar kunnen.",
+      "reden": "Beide Raadsleden konden elkaars records niet controleren. Zonder vergelijking per dag blijft het ritme een overeenkomst tussen twee losse bronnen."
+    },
+    {
+      "actie": "Zet de conjunctie van de Wachtsterren niet meer als verklaring voor dag 33 in het dagboek, maar registreer de datum van de conjunctie en de nachtelijke waarnemingen zonder achteraf te verklaren.",
+      "reden": "De Oracle erkende dat de voorspelling voor dag 33 niet klopte en dat de verklaring 'nawerkt' een verklaring achteraf was. Dat maakt de hypothese niet toetsbaar."
+    },
+    {
+      "actie": "Noteer bij elke nachtelijke waarneming welke dieren eerst aanslaan, en leg de volgorde vast per nacht.",
+      "reden": "De Beast Master heeft haar eerdere bewering over de volgorde moeten corrigeren. Een vaste registratie voorkomt dat dezelfde fout opnieuw optreedt."
+    }
+  ],
+  "risicos": [
+    {
+      "risico": "De kabels of de conjunctie worden als oorzaak aangewezen op basis van tijdsamenloop, terwijl die samenloop geen oorzaak bewijst.",
+      "mitigatie": "Toets de hypothesen alleen met data per dag en houd de kabels en de conjunctie als open vraag tot er bewijs is."
+    },
+    {
+      "risico": "Visioenen van de Oracle worden als waarnemingen van de Desync behandeld, terwijl ze geen dieren of mensen tonen.",
+      "mitigatie": "Houd visioenen en fysieke waarnemingen in aparte categorieën in de verslaglegging."
+    },
+    {
+      "risico": "Het ritme van vier dagen wordt te sterk gewogen en de uitzondering op dag 33 wordt genegeerd.",
+      "mitigatie": "Registreer alle dagen, ook de rustige, en vergelijk de afwijkingen expliciet met het ritme."
+    },
+    {
+      "risico": "Herstelmaatregelen gericht op de kabels worden genomen zonder dat de oorzaak bewezen is, met mogelijk onnodige schade of kosten.",
+      "mitigatie": "Wacht met ingrijpen aan de kabels tot de werkdata naast de zware nachten is gelegd."
+    }
+  ],
+  "voorspelling": {
+    "dag": 46,
+    "bewering": "Als het vierdaagse ritme standhoudt, zal de Desync op dag 46 opnieuw een zware nacht veroorzaken, rond 04:15 tot 04:50, met onrust bij wolven en herten in het diepe woud en stemmen en stil water in de visioenen van de Oracle. Dit is een extrapolatie van het patroon en geen bewezen oorzaak.",
+    "bewijs": [
+      "ORA-142",
+      "BEA-091"
+    ]
+  }
+}

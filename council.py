@@ -243,13 +243,78 @@ async def run():
     print(f"\n[Koning]:\n{r.text}")
 
     # TODO voor jullie team: laat de Council dit Verdict zelf invullen (zie schema/verdict.json).
-    verdict = {
-        "run_id": run_id,
-        "samenvatting": "TODO",
-        "oorzaak": {slot: {"bewering": None, "bewijs": []} for slot in ("ingreep", "mechanisme", "verloop")},
-        "acties": [{"actie": "TODO", "reden": "TODO"}],
-        "risicos": [{"risico": "TODO", "mitigatie": "TODO"}],
-    }
+    verdict_prompt = f"""Analyseer het volledige debat en stel het definitieve Council Verdict en de geschillen op in JSON.
+    Baseer je UITSLUITEND op feiten en record-ID's die door de Raadsleden in het debat zijn genoemd. Verzin geen ID's.
+    
+    Strikte schema-eisen (de validator keurt de uitvoer af als je hiervan afwijkt):
+    1. RECORD-ID'S: Elk element in een "bewijs"-lijst moet exact overeenkomen met ^(ARC|ENG|GUA|HIS|ORA|BEA)-[0-9]{{3}}$ (bijv. ["BEA-019", "BEA-020"]). Combineer NOOIT twee ID's met een schuine streep of bereik zoals "BEA-019/020" of "ORA-110 t/m 142".
+    2. GESCHILLEN: In "standpunten" zijn ALLEEN de exacte rol-keys uit deze lijst toegestaan: {list(ROLLEN)}. Gebruik nooit namen met hoofdletters of verzonnen keys.
+    3. ONBEKENDE OORZAAK: Als ingreep, mechanisme of verloop nog niet bewezen is uit het debat, zet dan "bewering": null en "bewijs": [].
+    
+    Geef UITSLUITEND geldig JSON terug in deze exacte structuur:
+    {{
+      "samenvatting": "Beknopte conclusie van het onderzoek",
+      "oorzaak": {{
+        "ingreep": {{
+          "bewering": "Concrete handeling/oorzaak, of null indien onbekend",
+          "bewijs": ["ENG-001"],
+          "zekerheid": 0.0
+        }},
+        "mechanisme": {{
+          "bewering": "Hoe dit tot de Desync leidt, of null indien onbekend",
+          "bewijs": ["ARC-001"],
+          "zekerheid": 0.0
+        }},
+        "verloop": {{
+          "bewering": "Chronologisch verloop en patroon van de Desync, of null indien onbekend",
+          "bewijs": ["ORA-110", "BEA-019"],
+          "zekerheid": 0.0
+        }}
+      }},
+      "acties": [
+        {{
+          "actie": "Concrete herstelstap",
+          "reden": "Waarom deze stap nodig is op basis van het debat"
+        }}
+      ],
+      "risicos": [
+        {{
+          "risico": "Mogelijk risico bij herstel of nietsdoen",
+          "mitigatie": "Hoe dit risico beperkt wordt"
+        }}
+      ],
+      "voorspelling": {{
+        "dag": 46,
+        "bewering": "Voorspelling wanneer de Desync opnieuw toeslaat",
+        "bewijs": ["ORA-142", "BEA-091"]
+      }},
+      "geschillen": [
+        {{
+          "onderwerp": "Waar de Raadsleden het oneens over waren",
+          "standpunten": {{
+            "beast_master": "Standpunt van de Beast Master",
+            "oracle": "Standpunt van de Oracle"
+          }},
+          "uitkomst": "Hoe dit in het debat is beslecht of waarom het onbeslist bleef",
+          "bewijs": ["BEA-102", "ORA-121"]
+        }}
+      ]
+    }}"""
+    
+    r_verdict = await koning.run(
+            options=opties,
+            messages="Debat:\n\n" + "\n\n".join(debat) + "\n\n" + verdict_prompt,
+        )
+    tel(verbruik, "groot", r_verdict.usage_details)
+    
+    schone_tekst = r_verdict.text.replace("\u2011", "-").replace("\u2013", "-")
+    match = re.search(r"\{.*\}", schone_tekst, re.DOTALL)
+    resultaat = json.loads(match.group(0) if match else schone_tekst)
+    
+    trace["geschillen"] = resultaat.pop("geschillen", [])
+    verdict = {"run_id": run_id, **resultaat}
+
+
     trace["status"], trace["aan_het_woord"] = "klaar", None
     bewaar("trace.json", trace)
     bewaar("verdict.json", verdict)
